@@ -8,6 +8,7 @@ export interface Translation {
     services: string;
     pro: string;
     faq: string;
+    checklist: string;
     contact: string;
   };
   hero: {
@@ -135,7 +136,42 @@ export interface Translation {
     checklistTitle: string;
     checklistSub: string;
     checklistBtn: string;
+    modal: {
+      title: string;
+      firstName: string;
+      email: string;
+      submit: string;
+      successTitle: string;
+      successSub: string;
+      downloadLink: string;
+    };
     footerDesc: string;
+  };
+  checklist: {
+    heroBadge: string;
+    heroTitle: string;
+    heroSub: string;
+    printBtn: string;
+    encouragementTitle: string;
+    encouragementText: string;
+    sections: {
+      personal: {
+        title: string;
+        items: string[];
+      };
+      income: {
+        title: string;
+        items: string[];
+      };
+      deductions: {
+        title: string;
+        items: string[];
+      };
+      business: {
+        title: string;
+        items: string[];
+      };
+    };
   };
 }
 
@@ -147,6 +183,7 @@ export const translations: Record<Language, Translation> = {
       services: 'Services',
       pro: 'Why a Pro?',
       faq: 'FAQ',
+      checklist: 'Checklist',
       contact: 'Contact',
     },
     hero: {
@@ -314,8 +351,67 @@ export const translations: Record<Language, Translation> = {
       conf: 'Confidential',
       checklistTitle: 'Tax Checklist 2026',
       checklistSub: "Don't forget a thing! Download our free list of what to bring to your appointment.",
-      checklistBtn: 'Free Download',
+      checklistBtn: 'Get Tax Checklist',
+      modal: {
+        title: 'Be Prepared for Tax Season.',
+        firstName: 'First Name',
+        email: 'Email',
+        submit: 'Send My Free Checklist',
+        successTitle: 'Success!',
+        successSub: 'Your checklist is ready for download.',
+        downloadLink: 'Download Checklist (PDF)',
+      },
       footerDesc: 'Professional tax preparation, bookkeeping, and payroll services you can trust. Serving families and businesses in Union Gap, Yakima, Mattawa, Othello, and Quincy since 2009.',
+    },
+    checklist: {
+      heroBadge: 'Client Resources',
+      heroTitle: 'Tax Preparation Document Checklist',
+      heroSub: "Gathering your documents is the first step to maximized deductions and peace of mind. Use our comprehensive checklist to prepare for your appointment.",
+      printBtn: 'Download / Print Checklist',
+      encouragementTitle: 'Get Organized, Get Maximized',
+      encouragementText: 'Being prepared helps us identify every credit and deduction you qualify for. We serve individuals, seasonal workers, and small businesses in the Central Washington area.',
+      sections: {
+        personal: {
+          title: 'Personal Information',
+          items: [
+            'Driver License or Government-issued photo ID',
+            'Social Security cards (SSN) or ITIN letters for everyone on the return',
+            'Birth certificates for all dependents appearing on your return',
+            'Bank account & routing numbers (for Direct Deposit of your refund)',
+            'Copy of last year’s tax return (if you are a new client)'
+          ]
+        },
+        income: {
+          title: 'Income Documents',
+          items: [
+            'W-2 forms from all employers during the year',
+            '1099-NEC / 1099-MISC for self-employment or independent contract work',
+            '1099-INT, 1099-DIV, 1099-G (Interest, Dividends, Unemployment)',
+            '1099-SSA (Social Security benefits statement)',
+            'Records of rental property income',
+            'W-2G for gambling or lottery winnings'
+          ]
+        },
+        deductions: {
+          title: 'Common Deductions',
+          items: [
+            'Childcare provider information (Name, address, and Tax ID or SSN)',
+            'Form 1098 Mortgage Interest statement',
+            'Medical, dental, and vision expense receipts',
+            'Record of charitable donations (Cash and non-cash)',
+            'Education expenses (1098-T) and Student Loan Interest (1098-E)'
+          ]
+        },
+        business: {
+          title: 'Small Business & Self-Employed',
+          items: [
+            'Detailed records of business income or gross receipts',
+            'Expense receipts (Materials, travel, supplies, advertising)',
+            'Vehicle mileage logs (Business miles vs. total miles driven)',
+            'Home office square footage and utility records'
+          ]
+        }
+      }
     }
   },
   es: {
@@ -325,6 +421,7 @@ export const translations: Record<Language, Translation> = {
       services: 'Servicios',
       pro: '¿Por qué Pro?',
       faq: 'Preguntas',
+      checklist: 'Lista',
       contact: 'Contacto',
     },
     hero: {
@@ -492,8 +589,67 @@ export const translations: Record<Language, Translation> = {
       conf: 'Confidencial',
       checklistTitle: 'Lista de Control 2026',
       checklistSub: '¡Que no se le olvide nada! Descargue nuestra lista gratuita.',
-      checklistBtn: 'Descargar Gratis',
+      checklistBtn: 'Obtener Lista de Impuestos',
+      modal: {
+        title: 'Prepárese para la Temporada de Impuestos.',
+        firstName: 'Nombre',
+        email: 'Correo Electrónico',
+        submit: 'Enviar mi Lista Gratuita',
+        successTitle: '¡Éxito!',
+        successSub: 'Su lista está lista para descargar.',
+        downloadLink: 'Descargar Lista (PDF)',
+      },
       footerDesc: 'Servicios profesionales de preparación de impuestos, contabilidad y nómina en los que puede confiar. Sirviendo a familias y negocios en Union Gap, Yakima, Mattawa, Othello y Quincy desde 2009.',
+    },
+    checklist: {
+      heroBadge: 'Recursos para Clientes',
+      heroTitle: 'Lista de Documentos para Impuestos',
+      heroSub: 'Reunir sus documentos es el primer paso para obtener deducciones máximas y paz mental. Use nuestra lista completa para prepararse para su cita.',
+      printBtn: 'Descargar / Imprimir Lista',
+      encouragementTitle: 'Organícese, Maximice su Reembolso',
+      encouragementText: 'Estar preparado nos ayuda a identificar cada crédito y deducción para los que califica. Atendemos a individuos, trabajadores temporales y pequeños negocios en el área de Central Washington.',
+      sections: {
+        personal: {
+          title: 'Información Personal',
+          items: [
+            'Licencia de conducir o identificación con foto emitida por el gobierno',
+            'Tarjetas de Seguro Social (SSN) o cartas de ITIN de todos en la declaración',
+            'Actas de nacimiento de todos los dependientes en su declaración',
+            'Números de cuenta y de ruta bancaria (para depósito directo)',
+            'Copia de la declaración del año pasado (si es un cliente nuevo)'
+          ]
+        },
+        income: {
+          title: 'Documentos de Ingresos',
+          items: [
+            'Formas W-2 de todos los empleadores durante el año',
+            '1099-NEC / 1099-MISC para trabajo por cuenta propia o contratista independiente',
+            '1099-INT, 1099-DIV, 1099-G (Intereses, Dividendos, Desempleo)',
+            '1099-SSA (Declaración de beneficios de Seguro Social)',
+            'Registros de ingresos de propiedades de alquiler',
+            'W-2G para ganancias de juegos o lotería'
+          ]
+        },
+        deductions: {
+          title: 'Deducciones Comunes',
+          items: [
+            'Información del proveedor de guardería (Nombre, dirección y Tax ID o SSN)',
+            'Forma 1098 de intereses hipotecarios',
+            'Recibos de gastos médicos, dentales y de la vista',
+            'Registro de donaciones caritativas (efectivo y no efectivo)',
+            'Gastos de educación (1098-T) e intereses de préstamos estudiantiles (1098-E)'
+          ]
+        },
+        business: {
+          title: 'Pequeñas Empresas y Trabajadores Independientes',
+          items: [
+            'Registros detallados de ingresos comerciales o recibos brutos',
+            'Recibos de gastos (Materiales, viajes, suministros, publicidad)',
+            'Registros de millaje del vehículo (millas de negocio vs. totales)',
+            'Pies cuadrados de oficina en casa y registros de servicios'
+          ]
+        }
+      }
     }
   }
 };

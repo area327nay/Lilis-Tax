@@ -18,6 +18,7 @@ export default function Navbar() {
     { name: t.nav.about, path: '/about' },
     { name: t.nav.services, path: '/services' },
     { name: t.nav.pro, path: '/why-hire-a-pro' },
+    { name: t.nav.checklist, path: '/checklist' },
     { name: t.nav.faq, path: '/faq' },
     { name: t.nav.contact, path: '/contact' },
   ];

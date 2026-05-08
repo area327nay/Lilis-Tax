@@ -5,9 +5,11 @@ import { useLanguage } from '../LanguageContext';
 import { ChevronRight, ShieldCheck, Clock, BrainCircuit, ReceiptText, Users, Map, FileDown, Phone, CheckCircle2, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import ChecklistModal from '../components/ChecklistModal';
 
 export default function Home() {
   const { t, language } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <div className="overflow-hidden">
@@ -38,7 +40,10 @@ export default function Home() {
                   <Phone className="w-5 h-5 shrink-0" />
                   <span>{t.hero.ctaMain}</span>
                 </a>
-                <button className="btn-secondary gap-3">
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="btn-secondary gap-3"
+                >
                   <FileDown className="w-5 h-5 text-green-700" />
                   <span>{t.home.checklistBtn}</span>
                 </button>
@@ -243,13 +248,13 @@ export default function Home() {
                <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight leading-none">{t.home.checklistTitle}</h2>
                <p className="text-green-100 text-lg max-w-md">{t.home.checklistSub}</p>
             </div>
-            <a 
-              href="#" 
+            <button 
+              onClick={() => setIsModalOpen(true)}
               className="relative z-10 bg-white text-green-900 px-10 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-transform flex items-center space-x-3 shadow-2xl"
             >
               <FileDown className="w-6 h-6" />
               <span>{t.home.checklistBtn}</span>
-            </a>
+            </button>
             {/* Abstract Shapes */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-green-700 rounded-full blur-[80px] opacity-20 -mr-20 -mt-20"></div>
             <div className="absolute bottom-1/2 left-0 w-32 h-32 bg-yellow-400 rounded-full blur-[60px] opacity-10"></div>
@@ -257,6 +262,10 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <ChecklistModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 }
