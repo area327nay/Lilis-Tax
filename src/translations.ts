@@ -172,6 +172,8 @@ export interface Translation {
         items: string[];
       };
     };
+    footerText: string;
+    footerBtn: string;
   };
 }
 
@@ -365,53 +367,50 @@ export const translations: Record<Language, Translation> = {
     },
     checklist: {
       heroBadge: 'Client Resources',
-      heroTitle: 'Tax Preparation Document Checklist',
-      heroSub: "Gathering your documents is the first step to maximized deductions and peace of mind. Use our comprehensive checklist to prepare for your appointment.",
-      printBtn: 'Download / Print Checklist',
+      heroTitle: 'Your Official Tax Preparation Checklist',
+      heroSub: "Getting your taxes done doesn't have to be stressful. Use this simple checklist to gather your documents before your appointment. Being prepared helps us maximize your deductions, reduce errors, and give you complete peace of mind!",
+      printBtn: 'Print this Checklist',
       encouragementTitle: 'Get Organized, Get Maximized',
       encouragementText: 'Being prepared helps us identify every credit and deduction you qualify for. We serve individuals, seasonal workers, and small businesses in the Central Washington area.',
       sections: {
         personal: {
-          title: 'Personal Information',
+          title: 'Personal Information (The Essentials)',
           items: [
-            'Driver License or Government-issued photo ID',
-            'Social Security cards (SSN) or ITIN letters for everyone on the return',
-            'Birth certificates for all dependents appearing on your return',
-            'Bank account & routing numbers (for Direct Deposit of your refund)',
-            'Copy of last year’s tax return (if you are a new client)'
+            'Government-issued Photo ID (Driver’s License, State ID, etc.)',
+            'Social Security Cards or ITIN letters for you, your spouse, and all dependents.',
+            'A copy of last year’s tax return (if you are a new client).',
+            'Bank account routing and account numbers for direct deposit.'
           ]
         },
         income: {
-          title: 'Income Documents',
+          title: 'Income Documents (Money Earned)',
           items: [
-            'W-2 forms from all employers during the year',
-            '1099-NEC / 1099-MISC for self-employment or independent contract work',
-            '1099-INT, 1099-DIV, 1099-G (Interest, Dividends, Unemployment)',
-            '1099-SSA (Social Security benefits statement)',
-            'Records of rental property income',
-            'W-2G for gambling or lottery winnings'
+            'W-2 Forms from all employers you worked for during the year.',
+            '1099-NEC / 1099-MISC forms for contract or freelance work.',
+            '1099-G forms for unemployment compensation or state refunds.',
+            '1099-INT / 1099-DIV forms for interest or dividend income.'
           ]
         },
         deductions: {
-          title: 'Common Deductions',
+          title: 'Common Deductions & Expenses (Money Spent)',
           items: [
-            'Childcare provider information (Name, address, and Tax ID or SSN)',
-            'Form 1098 Mortgage Interest statement',
-            'Medical, dental, and vision expense receipts',
-            'Record of charitable donations (Cash and non-cash)',
-            'Education expenses (1098-T) and Student Loan Interest (1098-E)'
+            "Childcare Expenses: Provider's name, address, Tax ID, and amount paid.",
+            'Education: Form 1098-T for college tuition and student loan interest records.',
+            'Homeowners: Form 1098 for mortgage interest and property tax records.',
+            'Medical: Out-of-pocket medical expenses and health insurance forms.'
           ]
         },
         business: {
-          title: 'Small Business & Self-Employed',
+          title: 'Small Business & Self-Employed (Schedule C)',
           items: [
-            'Detailed records of business income or gross receipts',
-            'Expense receipts (Materials, travel, supplies, advertising)',
-            'Vehicle mileage logs (Business miles vs. total miles driven)',
-            'Home office square footage and utility records'
+            'Summary of total gross business income.',
+            'Summary of business expenses.',
+            'Mileage log for business-related driving.'
           ]
         }
-      }
+      },
+      footerText: 'Have everything checked off? You are ready to go.',
+      footerBtn: 'Schedule Your Appointment'
     }
   },
   es: {
@@ -603,53 +602,50 @@ export const translations: Record<Language, Translation> = {
     },
     checklist: {
       heroBadge: 'Recursos para Clientes',
-      heroTitle: 'Lista de Documentos para Impuestos',
-      heroSub: 'Reunir sus documentos es el primer paso para obtener deducciones máximas y paz mental. Use nuestra lista completa para prepararse para su cita.',
-      printBtn: 'Descargar / Imprimir Lista',
+      heroTitle: 'Su Lista Oficial de Preparación de Impuestos',
+      heroSub: 'Preparar sus impuestos no tiene por qué ser estresante. Use esta sencilla lista para reunir sus documentos antes de su cita. ¡Estar preparado nos ayuda a maximizar sus deducciones, reducir errores y darle total paz mental!',
+      printBtn: 'Imprima esta Lista',
       encouragementTitle: 'Organícese, Maximice su Reembolso',
       encouragementText: 'Estar preparado nos ayuda a identificar cada crédito y deducción para los que califica. Atendemos a individuos, trabajadores temporales y pequeños negocios en el área de Central Washington.',
       sections: {
         personal: {
-          title: 'Información Personal',
+          title: 'Información Personal (Lo Esencial)',
           items: [
-            'Licencia de conducir o identificación con foto emitida por el gobierno',
-            'Tarjetas de Seguro Social (SSN) o cartas de ITIN de todos en la declaración',
-            'Actas de nacimiento de todos los dependientes en su declaración',
-            'Números de cuenta y de ruta bancaria (para depósito directo)',
-            'Copia de la declaración del año pasado (si es un cliente nuevo)'
+            'Identificación con foto emitida por el gobierno (Licencia de conducir, ID estatal, etc.)',
+            'Tarjetas de Seguro Social o cartas de ITIN para usted, su cónyuge y todos los dependientes.',
+            'Una copia de la declaración de impuestos del año pasado (si es un cliente nuevo).',
+            'Números de ruta y de cuenta bancaria para depósito directo.'
           ]
         },
         income: {
-          title: 'Documentos de Ingresos',
+          title: 'Documentos de Ingresos (Dinero Ganado)',
           items: [
-            'Formas W-2 de todos los empleadores durante el año',
-            '1099-NEC / 1099-MISC para trabajo por cuenta propia o contratista independiente',
-            '1099-INT, 1099-DIV, 1099-G (Intereses, Dividendos, Desempleo)',
-            '1099-SSA (Declaración de beneficios de Seguro Social)',
-            'Registros de ingresos de propiedades de alquiler',
-            'W-2G para ganancias de juegos o lotería'
+            'Formularios W-2 de todos los empleadores para los que trabajó durante el año.',
+            'Formularios 1099-NEC / 1099-MISC para trabajo por contrato o independiente.',
+            'Formularios 1099-G para compensación por desempleo o reembolsos estatales.',
+            'Formularios 1099-INT / 1099-DIV para ingresos por intereses o dividendos.'
           ]
         },
         deductions: {
-          title: 'Deducciones Comunes',
+          title: 'Deducciones y Gastos Comunes (Dinero Gastado)',
           items: [
-            'Información del proveedor de guardería (Nombre, dirección y Tax ID o SSN)',
-            'Forma 1098 de intereses hipotecarios',
-            'Recibos de gastos médicos, dentales y de la vista',
-            'Registro de donaciones caritativas (efectivo y no efectivo)',
-            'Gastos de educación (1098-T) e intereses de préstamos estudiantiles (1098-E)'
+            "Gastos de Guardería: Nombre del proveedor, dirección, Tax ID y monto pagado.",
+            'Educación: Formulario 1098-T para matrícula universitaria y registros de intereses de préstamos estudiantiles.',
+            'Propietarios: Formulario 1098 para registros de intereses hipotecarios e impuestos sobre la propiedad.',
+            'Médico: Gastos médicos de su propio bolsillo y formularios de seguro de salud.'
           ]
         },
         business: {
-          title: 'Pequeñas Empresas y Trabajadores Independientes',
+          title: 'Pequeñas Empresas y Trabajadores por Cuenta Propia (Anexo C)',
           items: [
-            'Registros detallados de ingresos comerciales o recibos brutos',
-            'Recibos de gastos (Materiales, viajes, suministros, publicidad)',
-            'Registros de millaje del vehículo (millas de negocio vs. totales)',
-            'Pies cuadrados de oficina en casa y registros de servicios'
+            'Resumen del ingreso comercial bruto total.',
+            'Resumen de gastos comerciales.',
+            'Registro de millaje para conducción relacionada con el negocio.'
           ]
         }
-      }
+      },
+      footerText: '¿Tiene todo marcado? Está listo para comenzar.',
+      footerBtn: 'Programe Su Cita'
     }
   }
 };

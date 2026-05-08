@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import { 
   CheckCircle2, 
   Printer, 
@@ -10,14 +11,25 @@ import {
   FileText, 
   TrendingDown, 
   Briefcase,
-  Info
+  Info,
+  CalendarCheck,
+  Check
 } from 'lucide-react';
 
 export default function ChecklistPage() {
   const { t } = useLanguage();
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
 
   const handlePrint = () => {
     window.print();
+  };
+
+  const toggleItem = (sectionId: string, index: number) => {
+    const key = `${sectionId}-${index}`;
+    setCheckedItems(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
   };
 
   const sections = [
@@ -49,7 +61,7 @@ export default function ChecklistPage() {
       <section className="relative pt-16 pb-20 overflow-hidden print:hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(21,128,61,0.05),transparent_50%)]" />
         <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -69,7 +81,7 @@ export default function ChecklistPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-600 mb-10 leading-relaxed font-medium"
+              className="text-xl text-slate-600 mb-10 leading-relaxed font-medium bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/50 shadow-sm"
             >
               {t.checklist.heroSub}
             </motion.p>
@@ -95,8 +107,8 @@ export default function ChecklistPage() {
           <div className="hidden print:block mb-10 border-b-2 border-green-700 pb-8">
             <div className="flex justify-between items-end">
               <div>
-                <h1 className="text-3xl font-bold text-slate-900 mb-2 uppercase tracking-tight">Lili’s Tax Services, LLC</h1>
-                <p className="text-slate-500 font-medium">Tax Preparation Document Checklist (2026)</p>
+                <h1 className="text-3xl font-extrabold text-slate-900 mb-2 uppercase tracking-tight">Lili’s Tax Services, LLC</h1>
+                <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">{t.checklist.heroTitle} (2026)</p>
               </div>
               <div className="text-right text-xs text-slate-400 font-bold uppercase tracking-widest">
                 (509) 902-0922 • Union Gap, WA
@@ -136,23 +148,53 @@ export default function ChecklistPage() {
                   </h2>
                 </div>
                 <ul className="space-y-4">
-                  {section.data.items.map((item, i) => (
-                    <li key={i} className="flex gap-4 items-start group">
-                      <div className="relative flex items-center justify-center w-6 h-6 rounded-md border-2 border-slate-200 mt-0.5 group-hover:border-green-600/50 transition-colors shrink-0 print:border-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-green-600 opacity-0 group-hover:opacity-20 transition-opacity" />
-                      </div>
-                      <span className="text-slate-600 font-medium leading-tight pt-0.5 group-hover:text-slate-900 transition-colors print:text-sm">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
+                  {section.data.items.map((item, i) => {
+                    const isChecked = checkedItems[`${section.id}-${i}`];
+                    return (
+                      <li key={i} className="flex gap-4 items-start group relative">
+                        <button 
+                          onClick={() => toggleItem(section.id, i)}
+                          className={`relative flex items-center justify-center w-6 h-6 rounded-md border-2 mt-0.5 transition-all shrink-0 print:border-slate-300 ${
+                            isChecked ? 'bg-green-600 border-green-600' : 'border-slate-200 group-hover:border-green-600/50'
+                          }`}
+                        >
+                          <Check className={`w-3.5 h-3.5 text-white transition-opacity ${isChecked ? 'opacity-100' : 'opacity-0'}`} />
+                        </button>
+                        <span 
+                          onClick={() => toggleItem(section.id, i)}
+                          className={`text-slate-600 font-medium leading-tight pt-0.5 cursor-pointer select-none transition-all print:text-sm ${
+                            isChecked ? 'text-slate-400 line-through decoration-slate-300' : 'group-hover:text-slate-900'
+                          }`}
+                        >
+                          {item}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </motion.div>
             ))}
           </div>
 
+          {/* Bottom CTA - Hidden on Print */}
+          <div className="mt-20 pt-12 border-t border-slate-100 print:hidden">
+            <div className="bg-green-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-green-100">
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl font-extrabold text-slate-900 mb-2">{t.checklist.footerText}</h3>
+                <p className="text-green-700 font-bold uppercase tracking-widest text-sm">Central WA Local Professional Since 2009</p>
+              </div>
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-3 bg-green-700 text-white px-10 py-5 rounded-2xl font-bold hover:bg-green-800 transition-all shadow-xl shadow-green-700/20 active:scale-95 group"
+              >
+                <CalendarCheck className="w-6 h-6" />
+                <span>{t.checklist.footerBtn}</span>
+              </Link>
+            </div>
+          </div>
+
           {/* Educational Footer - Print Only */}
-          <div className="hidden print:block mt-16 pt-8 border-t border-slate-100">
+          <div className="hidden print:block mt-16 pt-8 border-t-2 border-slate-100">
             <div className="flex gap-8 items-start">
               <div className="flex-1">
                 <p className="text-sm font-bold text-slate-900 mb-2 font-serif italic">"Clear communication, maximized deductions."</p>
