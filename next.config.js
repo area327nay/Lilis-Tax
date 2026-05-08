@@ -1,10 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
+  output: 'standalone',
+  // Next.js 15 might need experimental flags or specific setups for some things, but let's start basic
 };
 
 export default nextConfig;
