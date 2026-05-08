@@ -174,6 +174,11 @@ export interface Translation {
     };
     footerText: string;
     footerBtn: string;
+    printFooter: {
+      quote: string;
+      disclaimer: string;
+      cta: string;
+    };
   };
 }
 
@@ -410,7 +415,12 @@ export const translations: Record<Language, Translation> = {
         }
       },
       footerText: 'Have everything checked off? You are ready to go.',
-      footerBtn: 'Schedule Your Appointment'
+      footerBtn: 'Schedule Your Appointment',
+      printFooter: {
+        quote: '"Clear communication, maximized deductions."',
+        disclaimer: 'Please keep all original receipts, mileage logs, and home office records for at least 7 years. Digital copies are accepted by the IRS but must be legible.',
+        cta: 'Book Your Appointment'
+      }
     }
   },
   es: {
@@ -645,7 +655,12 @@ export const translations: Record<Language, Translation> = {
         }
       },
       footerText: '¿Tiene todo marcado? Está listo para comenzar.',
-      footerBtn: 'Programe Su Cita'
+      footerBtn: 'Programe Su Cita',
+      printFooter: {
+        quote: '"Comunicación clara, deducciones maximizadas."',
+        disclaimer: 'Por favor, guarde todos los recibos originales, registros de millaje y registros de la oficina en casa por al menos 7 años. El IRS acepta copias digitales, pero deben ser legibles.',
+        cta: 'RESERVE SU CITA'
+      }
     }
   }
 };

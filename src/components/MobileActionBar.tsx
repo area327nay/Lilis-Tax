@@ -8,7 +8,7 @@ export default function MobileActionBar() {
   const { t } = useLanguage();
 
   return (
-    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3">
+    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 print:hidden">
       <motion.a 
         initial={{ y: 100 }}
         animate={{ y: 0 }}

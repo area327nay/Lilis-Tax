@@ -197,14 +197,13 @@ export default function ChecklistPage() {
           <div className="hidden print:block mt-16 pt-8 border-t-2 border-slate-100">
             <div className="flex gap-8 items-start">
               <div className="flex-1">
-                <p className="text-sm font-bold text-slate-900 mb-2 font-serif italic">"Clear communication, maximized deductions."</p>
+                <p className="text-sm font-bold text-slate-900 mb-2 font-serif italic">{t.checklist.printFooter.quote}</p>
                 <p className="text-xs text-slate-500 leading-relaxed font-medium">
-                  Please keep all original receipts, mileage logs, and home office records for at least 7 years. 
-                  Digital copies are accepted by the IRS but must be legible.
+                  {t.checklist.printFooter.disclaimer}
                 </p>
               </div>
               <div className="text-right shrink-0">
-                <p className="text-xs font-extrabold text-slate-900 uppercase tracking-widest mb-1">Book Your Appointment</p>
+                <p className="text-xs font-extrabold text-slate-900 uppercase tracking-widest mb-1">{t.checklist.printFooter.cta}</p>
                 <p className="text-lg font-black text-green-700 tracking-tight">(509) 902-0922</p>
               </div>
             </div>
