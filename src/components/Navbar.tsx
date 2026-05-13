@@ -30,11 +30,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 h-16">
         <div className="flex justify-between items-center h-full">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-700 rounded-sm flex items-center justify-center text-white font-bold text-xl">L</div>
-              <span className="text-xl font-bold tracking-tight text-slate-900 uppercase">
-                Lili’s <span className="text-green-700">Tax Services</span>
-              </span>
+            <Link href="/" className="flex items-center">
+              {/* Desktop Wide Logo */}
+              <img 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
+                alt="Lili's Tax Services Wide Logo" 
+                className="hidden md:block h-10 w-auto"
+              />
+              {/* Mobile Stacked Logo */}
+              <img 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                alt="Lili's Tax Services Logo" 
+                className="md:hidden h-10 w-auto"
+              />
             </Link>
           </div>
 

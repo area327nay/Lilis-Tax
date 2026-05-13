@@ -173,6 +173,7 @@ export interface Translation {
       };
     };
     footerText: string;
+    footerSub: string;
     footerBtn: string;
     printFooter: {
       quote: string;
@@ -415,6 +416,7 @@ export const translations: Record<Language, Translation> = {
         }
       },
       footerText: 'Have everything checked off? You are ready to go.',
+      footerSub: 'Central WA Local Professional Since 2009',
       footerBtn: 'Schedule Your Appointment',
       printFooter: {
         quote: '"Clear communication, maximized deductions."',
@@ -655,6 +657,7 @@ export const translations: Record<Language, Translation> = {
         }
       },
       footerText: '¿Tiene todo marcado? Está listo para comenzar.',
+      footerSub: 'Profesional Local de Central WA Desde 2009',
       footerBtn: 'Programe Su Cita',
       printFooter: {
         quote: '"Comunicación clara, deducciones maximizadas."',

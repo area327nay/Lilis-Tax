@@ -17,8 +17,9 @@ export default function Services() {
       description: t.services.taxPrepDesc,
       details: t.services.taxPrepDetails,
       images: [
-        'https://images.unsplash.com/photo-1554224154-26032ffc0d07'
-      ]
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0727.jpg'
+      ],
+      alt: "Lilia pointing out deductions on a tax form"
     },
     {
       id: 'bookkeeping',
@@ -27,9 +28,9 @@ export default function Services() {
       description: t.services.bookkeepingDesc,
       details: t.services.bookkeepingDetails,
       images: [
-        'https://images.unsplash.com/photo-1586281380349-632531db7ed4',
-        'https://images.unsplash.com/photo-1551288049-bebda4e38f71'
-      ]
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+      ],
+      alt: "Lilia focused on bookkeeping software"
     },
     {
       id: 'payroll',
@@ -38,8 +39,9 @@ export default function Services() {
       description: t.services.payrollDesc,
       details: t.services.payrollDetails,
       images: [
-        'https://images.unsplash.com/photo-1520004434532-668416a08753'
-      ]
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+      ],
+      alt: "Lilia focused on bookkeeping software"
     }
   ];
 
@@ -116,9 +118,9 @@ export default function Services() {
                     >
                       <div className="absolute -inset-2 bg-slate-50 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       <img 
-                        src={`${img}?auto=format&fit=crop&q=80&w=800`} 
+                        src={img} 
                         className={`rounded-[2.5rem] shadow-2xl w-full ${service.images.length === 1 ? 'aspect-video' : 'aspect-[4/5]'} object-cover border border-slate-100 relative z-10 transition-transform group-hover:scale-[1.02]`} 
-                        alt={service.title}  
+                        alt={service.alt || service.title}  
                         referrerPolicy="no-referrer" 
                       />
                     </motion.div>

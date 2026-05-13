@@ -59,12 +59,25 @@ export default function About() {
                   {t.about.storyP3}
                 </p>
               </div>
+
+              {/* Story Video */}
+              <div className="mt-12 group">
+                <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-100">
+                  <iframe 
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/9dce-sjlJWw?rel=0" 
+                    title="Lili's Tax Services Story"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-slate-50 rounded-[3rem] border border-slate-100 -rotate-2 -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800" 
-                alt="Pristine Office Space" 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0741.jpg" 
+                alt="Lilia working at her computer alongside a colleague" 
                 className="rounded-[2.5rem] shadow-2xl w-full aspect-[4/5] object-cover border border-slate-100"
                 referrerPolicy="no-referrer"
               />

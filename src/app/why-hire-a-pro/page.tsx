@@ -17,8 +17,8 @@ export default function WhyHirePro() {
   return (
     <div className="pb-24 bg-white">
       {/* Header */}
-      <section className="bg-slate-50 py-32 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="bg-slate-50 py-32 border-b border-slate-100 pb-48">
+        <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.div
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
@@ -40,26 +40,62 @@ export default function WhyHirePro() {
         </div>
       </section>
 
+      {/* Main Header Image */}
+      <section className="max-w-7xl mx-auto px-6 -mt-32 relative z-20 mb-32">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+          <img 
+            src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0826.jpg" 
+            alt="Professional tax consultation" 
+            className="w-full rounded-[3rem] shadow-2xl border border-slate-100 aspect-video object-cover"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+      </section>
+
       {/* Benefits Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-32">
+      <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
            {t.whyPro.benefits.map((benefit, index) => (
              <motion.div 
                key={index}
-               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-               whileInView={{ opacity: 1, x: 0 }}
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex gap-8 items-start hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 group"
+               className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col gap-6 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 group"
              >
-               <div className="p-4 bg-white shadow-sm border border-slate-200 text-green-700 rounded-2xl shrink-0 group-hover:bg-green-700 group-hover:text-white transition-colors">
-                 {React.cloneElement(icons[index] as React.ReactElement, { 
-                   className: 'w-6 h-6' 
-                 } as React.HTMLAttributes<SVGElement>)}
+               <div className="flex gap-8 items-start">
+                 <div className="p-4 bg-white shadow-sm border border-slate-200 text-green-700 rounded-2xl shrink-0 group-hover:bg-green-700 group-hover:text-white transition-colors">
+                   {React.cloneElement(icons[index] as React.ReactElement, { 
+                     className: 'w-6 h-6' 
+                   } as React.HTMLAttributes<SVGElement>)}
+                 </div>
+                 <div>
+                   <h3 className="text-2xl font-extrabold text-slate-900 mb-3 tracking-tight">{benefit.title}</h3>
+                   <p className="text-slate-600 leading-relaxed font-medium">{benefit.desc}</p>
+                 </div>
                </div>
-               <div>
-                 <h3 className="text-2xl font-extrabold text-slate-900 mb-3 tracking-tight">{benefit.title}</h3>
-                 <p className="text-slate-600 leading-relaxed font-medium">{benefit.desc}</p>
-               </div>
+               
+               {/* Contextual Images for specific benefits */}
+               {index === 1 && ( // Audit Protection
+                 <img 
+                   src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0725.jpg" 
+                   alt="Lilia providing trusted tax advice" 
+                   className="rounded-2xl shadow-lg border border-slate-100 w-full aspect-video object-cover mt-4" 
+                   referrerPolicy="no-referrer"
+                 />
+               )}
+               {index === 7 && ( // Peace of Mind
+                 <img 
+                   src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0832.jpg" 
+                   alt="Lilia explaining tax benefits" 
+                   className="rounded-2xl shadow-lg border border-slate-100 w-full aspect-video object-cover mt-4" 
+                   referrerPolicy="no-referrer"
+                 />
+               )}
              </motion.div>
            ))}
         </div>

@@ -89,6 +89,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Choose Us - Video Section */}
+      <section className="py-24 bg-slate-900 border-y border-slate-800 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-[100px] -ml-48 -mb-48"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                {language === 'en' ? 'Trusted by the' : 'Con la Confianza de la'} <br/>
+                <span className="text-green-500 underline decoration-yellow-400 decoration-3 underline-offset-8">Yakima Community</span>
+              </h2>
+              <p className="text-lg text-slate-400 mb-8 font-medium leading-relaxed">
+                {language === 'en' 
+                  ? 'We are more than just tax preparers; we are your local partners in financial growth. Watch how we serve our community with excellence.' 
+                  : 'Somos más que simples preparadores de impuestos; somos sus socios locales en el crecimiento financiero. Vea cómo servimos a nuestra comunidad con excelencia.'}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-white text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>{language === 'en' ? 'Bilingual Support' : 'Soporte Bilingüe'}</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-white text-sm">
+                  <CheckCircle2 className="w-4 h-4 text-green-500" />
+                  <span>{language === 'en' ? 'Licensed Professionals' : 'Profesionales con Licencia'}</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 w-full">
+              <div className="relative group aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/bjfTtCXNoqE?rel=0" 
+                  title="Trusted by the Yakima Community"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid Preview */}
       <section className="py-24 bg-white">
         <motion.div 
@@ -136,8 +179,8 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-400 rounded-2xl z-0"></div>
                 <img 
-                  src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" 
-                  alt="Minimalist Financial Workspace" 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0798.jpeg" 
+                  alt="Lilia Gomez-Munguia reviewing tax documents with a client" 
                   className="relative z-10 rounded-[2.5rem] shadow-2xl border border-slate-100"
                   referrerPolicy="no-referrer"
                 />

@@ -12,11 +12,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-green-700 rounded-sm flex items-center justify-center text-white font-bold text-xl">L</div>
-              <span className="text-xl font-bold tracking-tight text-white uppercase">
-                Lili’s <span className="text-green-700">Tax Services</span>
-              </span>
+            <Link href="/" className="flex items-center mb-6">
+              <img 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                alt="Lili's Tax Services Stacked Logo" 
+                className="h-16 w-auto"
+              />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-sm mb-8">
               {t.home.footerDesc}

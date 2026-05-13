@@ -137,7 +137,7 @@ export default function ChecklistPage() {
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="print:opacity-100 print:translate-x-0"
+                className="print:opacity-100 print:translate-x-0 break-inside-avoid"
               >
                 <div className="flex items-center gap-4 mb-6 border-b border-slate-100 pb-4 print:mb-4">
                   <div className="p-3 bg-slate-50 text-green-700 rounded-xl print:hidden">
@@ -181,7 +181,7 @@ export default function ChecklistPage() {
             <div className="bg-green-50 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-green-100">
               <div className="text-center md:text-left">
                 <h3 className="text-3xl font-extrabold text-slate-900 mb-2">{t.checklist.footerText}</h3>
-                <p className="text-green-700 font-bold uppercase tracking-widest text-sm">Central WA Local Professional Since 2009</p>
+                <p className="text-green-700 font-bold uppercase tracking-widest text-sm">{t.checklist.footerSub}</p>
               </div>
               <Link 
                 href="/contact"

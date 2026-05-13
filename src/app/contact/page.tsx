@@ -43,8 +43,8 @@ export default function Contact() {
              <div className="hidden lg:block relative">
                <div className="absolute -inset-4 bg-white/50 rounded-[3rem] blur-2xl"></div>
                <img 
-                 src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&q=80&w=800" 
-                 alt="Clean modern office desk with phone top down view" 
+                 src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0818.jpg" 
+                 alt="Lilia actively listening to a client's financial needs" 
                  className="relative z-10 rounded-[2.5rem] shadow-2xl border border-white/20 w-full h-[350px] object-cover"
                  referrerPolicy="no-referrer"
                />
