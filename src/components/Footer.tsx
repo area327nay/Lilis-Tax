@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center mb-6">
               <img 
-                src="/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/public/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
                 alt="Lili's Tax Services Stacked Logo" 
                 className="h-16 w-auto"
               />

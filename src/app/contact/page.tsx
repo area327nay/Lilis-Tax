@@ -44,7 +44,7 @@ export default function Contact() {
                <div className="absolute -inset-4 bg-white/50 rounded-[3rem] blur-2xl"></div>
                <div className="relative z-10 w-full h-[350px]">
                  <img 
-                   src="/PS1_0818.jpg" 
+                   src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/public/PS1_0818.jpg" 
                    alt="Contact us" 
                    className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover"
                  />
