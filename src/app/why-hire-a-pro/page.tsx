@@ -47,12 +47,13 @@ export default function WhyHirePro() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
         >
-          <img 
-            src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0826.jpg" 
-            alt="Professional tax consultation" 
-            className="w-full rounded-[3rem] shadow-2xl border border-slate-100 aspect-video object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <div className="relative w-full aspect-video">
+            <img 
+              src="/PS1_0826.jpg" 
+              alt="Professional consultation" 
+              className="w-full h-full rounded-[3rem] shadow-2xl border border-slate-100 object-cover"
+            />
+          </div>
         </motion.div>
       </section>
 
@@ -79,22 +80,23 @@ export default function WhyHirePro() {
                  </div>
                </div>
                
-               {/* Contextual Images for specific benefits */}
-               {index === 1 && ( // Audit Protection
-                 <img 
-                   src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0725.jpg" 
-                   alt="Lilia providing trusted tax advice" 
-                   className="rounded-2xl shadow-lg border border-slate-100 w-full aspect-video object-cover mt-4" 
-                   referrerPolicy="no-referrer"
-                 />
+                {index === 1 && ( // Audit Protection
+                 <div className="relative w-full aspect-video mt-4">
+                  <img 
+                    src="/PS1_0725.jpg" 
+                    alt="Audit support" 
+                    className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
+                  />
+                 </div>
                )}
                {index === 7 && ( // Peace of Mind
-                 <img 
-                   src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0832.jpg" 
-                   alt="Lilia explaining tax benefits" 
-                   className="rounded-2xl shadow-lg border border-slate-100 w-full aspect-video object-cover mt-4" 
-                   referrerPolicy="no-referrer"
-                 />
+                 <div className="relative w-full aspect-video mt-4">
+                  <img 
+                    src="/PS1_0832.jpg" 
+                    alt="Peace of mind" 
+                    className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
+                  />
+                 </div>
                )}
              </motion.div>
            ))}

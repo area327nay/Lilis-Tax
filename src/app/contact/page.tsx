@@ -42,12 +42,13 @@ export default function Contact() {
              </div>
              <div className="hidden lg:block relative">
                <div className="absolute -inset-4 bg-white/50 rounded-[3rem] blur-2xl"></div>
-               <img 
-                 src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0818.jpg" 
-                 alt="Lilia actively listening to a client's financial needs" 
-                 className="relative z-10 rounded-[2.5rem] shadow-2xl border border-white/20 w-full h-[350px] object-cover"
-                 referrerPolicy="no-referrer"
-               />
+               <div className="relative z-10 w-full h-[350px]">
+                 <img 
+                   src="/PS1_0818.jpg" 
+                   alt="Contact us" 
+                   className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover"
+                 />
+               </div>
                <div className="absolute -bottom-6 -right-6 p-6 bg-green-700 text-white rounded-3xl shadow-xl z-20 font-bold">
                  Peace of Mind.
                </div>

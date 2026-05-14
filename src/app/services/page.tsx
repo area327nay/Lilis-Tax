@@ -17,9 +17,9 @@ export default function Services() {
       description: t.services.taxPrepDesc,
       details: t.services.taxPrepDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0727.jpg'
+        '/PS1_0727.jpg'
       ],
-      alt: "Lilia pointing out deductions on a tax form"
+      alt: "Tax preparation deductions"
     },
     {
       id: 'bookkeeping',
@@ -28,9 +28,9 @@ export default function Services() {
       description: t.services.bookkeepingDesc,
       details: t.services.bookkeepingDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+        '/PS1_0748.jpg'
       ],
-      alt: "Lilia focused on bookkeeping software"
+      alt: "Bookkeeping services"
     },
     {
       id: 'payroll',
@@ -39,9 +39,9 @@ export default function Services() {
       description: t.services.payrollDesc,
       details: t.services.payrollDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+        '/PS1_0748.jpg'
       ],
-      alt: "Lilia focused on bookkeeping software"
+      alt: "Bookkeeping services"
     }
   ];
 
@@ -117,12 +117,13 @@ export default function Services() {
                       className="relative group"
                     >
                       <div className="absolute -inset-2 bg-slate-50 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                      <img 
-                        src={img} 
-                        className={`rounded-[2.5rem] shadow-2xl w-full ${service.images.length === 1 ? 'aspect-video' : 'aspect-[4/5]'} object-cover border border-slate-100 relative z-10 transition-transform group-hover:scale-[1.02]`} 
-                        alt={service.alt || service.title}  
-                        referrerPolicy="no-referrer" 
-                      />
+                      <div className={`relative z-10 w-full ${service.images.length === 1 ? 'aspect-video' : 'aspect-[4/5]'} transition-transform group-hover:scale-[1.02]`}>
+                        <img 
+                          src={img} 
+                          alt={service.alt || service.title}  
+                          className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100" 
+                        />
+                      </div>
                     </motion.div>
                   ))}
                 </div>

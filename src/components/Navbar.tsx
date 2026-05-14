@@ -32,17 +32,21 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               {/* Desktop Wide Logo */}
-              <img 
-                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
-                alt="Lili's Tax Services Wide Logo" 
-                className="hidden md:block h-10 w-auto"
-              />
+              <div className="hidden md:block">
+                <img 
+                  src="/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
+                  alt="Lili's Tax Services Wide Logo" 
+                  className="h-10 w-auto"
+                />
+              </div>
               {/* Mobile Stacked Logo */}
-              <img 
-                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
-                alt="Lili's Tax Services Logo" 
-                className="md:hidden h-10 w-auto"
-              />
+              <div className="md:hidden">
+                <img 
+                  src="/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                  alt="Lili's Tax Services Logo" 
+                  className="h-10 w-auto"
+                />
+              </div>
             </Link>
           </div>
 

@@ -178,12 +178,13 @@ export default function Home() {
             <div className="lg:w-1/2">
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-400 rounded-2xl z-0"></div>
-                <img 
-                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0798.jpeg" 
-                  alt="Lilia Gomez-Munguia reviewing tax documents with a client" 
-                  className="relative z-10 rounded-[2.5rem] shadow-2xl border border-slate-100"
-                  referrerPolicy="no-referrer"
-                />
+                <div className="relative z-10 w-full h-[400px] md:h-[500px]">
+                  <img 
+                    src="/PS1_0798.jpeg" 
+                    alt="Lilia consulting with client" 
+                    className="w-full h-full rounded-[2.5rem] shadow-2xl border border-slate-100 object-cover"
+                  />
+                </div>
                 <div className="absolute -bottom-6 -right-6 p-6 bg-slate-900 text-white rounded-3xl shadow-xl z-20">
                   <div className="text-3xl font-bold">15+</div>
                   <div className="text-[10px] uppercase font-bold tracking-widest opacity-70">Years of Growth</div>

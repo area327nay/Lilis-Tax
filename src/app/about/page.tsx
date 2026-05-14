@@ -75,12 +75,13 @@ export default function About() {
             </div>
             <div className="relative">
               <div className="absolute -inset-4 bg-slate-50 rounded-[3rem] border border-slate-100 -rotate-2 -z-10"></div>
-              <img 
-                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0741.jpg" 
-                alt="Lilia working at her computer alongside a colleague" 
-                className="rounded-[2.5rem] shadow-2xl w-full aspect-[4/5] object-cover border border-slate-100"
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative w-full aspect-[4/5]">
+                <img 
+                  src="/PS1_0741.jpg" 
+                  alt="Lilia at computer" 
+                  className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100"
+                />
+              </div>
             </div>
           </div>
         </motion.div>
