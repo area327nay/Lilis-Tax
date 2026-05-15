@@ -3,7 +3,6 @@
 import React, { ReactNode } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import { Target, Heart, History, MapPin } from 'lucide-react';
 
 export default function About() {
@@ -77,12 +76,10 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 bg-slate-50 rounded-[3rem] border border-slate-100 -rotate-2 -z-10"></div>
               <div className="relative w-full aspect-[4/5]">
-                <Image 
-                  src="/PS1_0741.jpg" 
+                <img 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0741.jpg" 
                   alt="Lilia at computer" 
-                  fill
                   className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             </div>

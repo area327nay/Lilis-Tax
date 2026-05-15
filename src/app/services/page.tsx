@@ -3,7 +3,6 @@
 import React, { ReactNode } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import { Receipt, Building2, Wallet, Briefcase, FileText, BarChart3, ChevronRight, Users } from 'lucide-react';
 import Link from 'next/link';
 
@@ -18,7 +17,7 @@ export default function Services() {
       description: t.services.taxPrepDesc,
       details: t.services.taxPrepDetails,
       images: [
-        '/PS1_0727.jpg'
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0727.jpg'
       ],
       alt: "Tax preparation deductions"
     },
@@ -29,7 +28,7 @@ export default function Services() {
       description: t.services.bookkeepingDesc,
       details: t.services.bookkeepingDetails,
       images: [
-        '/PS1_0748.jpg'
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
       ],
       alt: "Bookkeeping services"
     },
@@ -40,7 +39,7 @@ export default function Services() {
       description: t.services.payrollDesc,
       details: t.services.payrollDetails,
       images: [
-        '/PS1_0748.jpg'
+        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
       ],
       alt: "Bookkeeping services"
     }
@@ -119,12 +118,10 @@ export default function Services() {
                     >
                       <div className="absolute -inset-2 bg-slate-50 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       <div className={`relative z-10 w-full ${service.images.length === 1 ? 'aspect-video' : 'aspect-[4/5]'} transition-transform group-hover:scale-[1.02]`}>
-                        <Image 
+                        <img 
                           src={img} 
                           alt={service.alt || service.title}  
-                          fill
                           className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100" 
-                          referrerPolicy="no-referrer"
                         />
                       </div>
                     </motion.div>

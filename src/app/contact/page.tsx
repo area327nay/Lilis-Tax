@@ -3,7 +3,6 @@
 import React, { ReactNode, useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Clock, Send, Calendar, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
@@ -44,12 +43,10 @@ export default function Contact() {
              <div className="hidden lg:block relative">
                <div className="absolute -inset-4 bg-white/50 rounded-[3rem] blur-2xl"></div>
                <div className="relative z-10 w-full h-[350px]">
-                  <Image 
-                    src="/PS1_0818.jpg" 
+                  <img 
+                    src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0818.jpg" 
                     alt="Contact us" 
-                    fill
-                    className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover"
-                    referrerPolicy="no-referrer"
+                    className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover" 
                   />
                </div>
                <div className="absolute -bottom-6 -right-6 p-6 bg-green-700 text-white rounded-3xl shadow-xl z-20 font-bold">

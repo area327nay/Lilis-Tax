@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import { Menu, X, Phone, Globe, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
 import { motion, AnimatePresence } from 'motion/react';
@@ -34,24 +33,18 @@ export default function Navbar() {
             <Link href="/" className="flex items-center">
               {/* Desktop Wide Logo */}
               <div className="hidden md:block">
-                <Image 
-                  src="/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
-                  alt="Lili's Tax Services Wide Logo" 
-                  width={200}
-                  height={40}
+                <img 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
+                  alt="Wide Logo" 
                   className="h-10 w-auto"
-                  referrerPolicy="no-referrer"
                 />
               </div>
               {/* Mobile Stacked Logo */}
               <div className="md:hidden">
-                <Image 
-                  src="/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                <img 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
                   alt="Lili's Tax Services Logo" 
-                  width={150}
-                  height={40}
                   className="h-10 w-auto"
-                  referrerPolicy="no-referrer"
                 />
               </div>
             </Link>

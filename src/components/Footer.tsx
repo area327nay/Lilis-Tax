@@ -2,7 +2,6 @@
 
 import { useLanguage } from '../LanguageContext';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export default function Footer() {
@@ -14,13 +13,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center mb-6">
-              <Image 
-                src="/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
-                alt="Lili's Tax Services Stacked Logo" 
-                width={120}
-                height={64}
+              <img 
+                src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                alt="Stacked Logo" 
                 className="h-16 w-auto"
-                referrerPolicy="no-referrer"
               />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-sm mb-8">

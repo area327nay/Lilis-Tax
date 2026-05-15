@@ -2,7 +2,6 @@
 
 import React, { ReactNode } from 'react';
 import { useLanguage } from '../LanguageContext';
-import Image from 'next/image';
 import { ChevronRight, ShieldCheck, Clock, BrainCircuit, ReceiptText, Users, Map, FileDown, Phone, CheckCircle2, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -180,12 +179,10 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-400 rounded-2xl z-0"></div>
                 <div className="relative z-10 w-full h-[400px] md:h-[500px]">
-                  <Image 
-                    src="/PS1_0798.jpeg" 
+                  <img 
+                    src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0798.jpeg" 
                     alt="Lilia consulting" 
-                    fill
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-slate-100 object-cover"
-                    referrerPolicy="no-referrer"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 p-6 bg-slate-900 text-white rounded-3xl shadow-xl z-20">
