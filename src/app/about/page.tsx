@@ -77,7 +77,7 @@ export default function About() {
               <div className="absolute -inset-4 bg-slate-50 rounded-[3rem] border border-slate-100 -rotate-2 -z-10"></div>
               <div className="relative w-full aspect-[4/5]">
                 <img 
-                  src="/PS1_0741.jpg" 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0741.jpg" 
                   alt="Lilia at computer" 
                   className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100"
                 />

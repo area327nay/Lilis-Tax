@@ -34,7 +34,7 @@ export default function Navbar() {
               {/* Desktop Wide Logo */}
               <div className="hidden md:block">
                 <img 
-                  src="/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/7aa7c204-8013-423d-b2a6-ba979a344318.JPG" 
                   alt="Wide Logo" 
                   className="h-10 w-auto"
                 />
@@ -42,7 +42,7 @@ export default function Navbar() {
               {/* Mobile Stacked Logo */}
               <div className="md:hidden">
                 <img 
-                  src="/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/ec50e98e-188d-4afb-8919-07c9511a407a.JPG" 
                   alt="Lili's Tax Services Logo" 
                   className="h-10 w-auto"
                 />

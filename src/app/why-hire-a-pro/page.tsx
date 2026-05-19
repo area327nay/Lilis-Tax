@@ -49,7 +49,7 @@ export default function WhyHirePro() {
         >
           <div className="relative w-full aspect-video">
             <img 
-              src="/PS1_0826.jpg" 
+              src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0826.jpg" 
               alt="Professional consultation" 
               className="w-full h-full rounded-[3rem] shadow-2xl border border-slate-100 object-cover"
             />
@@ -83,7 +83,7 @@ export default function WhyHirePro() {
                 {index === 1 && ( // Audit Protection
                  <div className="relative w-full aspect-video mt-4">
                    <img 
-                     src="/PS1_0725.jpg" 
+                     src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0725.jpg" 
                      alt="Audit support" 
                      className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
                    />
@@ -92,7 +92,7 @@ export default function WhyHirePro() {
                {index === 7 && ( // Peace of Mind
                  <div className="relative w-full aspect-video mt-4">
                    <img 
-                     src="/PS1_0832.jpg" 
+                     src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0832.jpg" 
                      alt="Peace of mind" 
                      className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
                    />
