@@ -180,7 +180,7 @@ export default function Home() {
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-400 rounded-2xl z-0"></div>
                 <div className="relative z-10 w-full h-[400px] md:h-[500px]">
                   <img 
-                    src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0798.jpeg" 
+                    src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
                     alt="Lilia consulting" 
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-slate-100 object-cover"
                   />

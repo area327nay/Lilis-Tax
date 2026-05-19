@@ -17,7 +17,7 @@ export default function Services() {
       description: t.services.taxPrepDesc,
       details: t.services.taxPrepDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0727.jpg'
+        'https://i.ibb.co/39FcM18h/PS1-0818.jpg'
       ],
       alt: "Tax preparation deductions"
     },
@@ -28,7 +28,7 @@ export default function Services() {
       description: t.services.bookkeepingDesc,
       details: t.services.bookkeepingDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+        'https://i.ibb.co/wFKjnnvb/PS1-0832.jpg'
       ],
       alt: "Bookkeeping services"
     },
@@ -39,7 +39,7 @@ export default function Services() {
       description: t.services.payrollDesc,
       details: t.services.payrollDetails,
       images: [
-        'https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/PS1_0748.jpg'
+        'https://i.ibb.co/wFKjnnvb/PS1-0832.jpg'
       ],
       alt: "Bookkeeping services"
     }
