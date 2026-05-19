@@ -63,13 +63,16 @@ export default function About() {
               {/* Story Video */}
               <div className="mt-12 group">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-100">
-                  <iframe 
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/9dce-sjlJWw?rel=0" 
-                    title="Lili's Tax Services Story"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
+                  <video 
+                    className="w-full h-full object-cover"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                  >
+                    <source src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/story-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
