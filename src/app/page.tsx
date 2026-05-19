@@ -119,16 +119,13 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2 w-full">
               <div className="relative group aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
-                <video 
-                  className="w-full h-full object-cover"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/tax-video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/bjfTtCXNoqE?rel=0" 
+                  title="Trusted by the Yakima Community"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
               </div>
             </div>
           </div>
