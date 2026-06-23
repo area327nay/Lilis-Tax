@@ -1,8 +1,8 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useLanguage } from '../LanguageContext';
-import { ChevronRight, ShieldCheck, Clock, BrainCircuit, ReceiptText, Users, Map, FileDown, Phone, CheckCircle2, MapPin } from 'lucide-react';
+import { ChevronRight, ShieldCheck, BrainCircuit, ReceiptText, Users, Map, FileDown, Phone, CheckCircle2, MapPin, Building2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import ChecklistModal from '../components/ChecklistModal';
@@ -16,6 +16,24 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-slate-50 border-b border-slate-100 overflow-hidden min-h-[85vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6 py-20 w-full">
+          <motion.div 
+            className="flex justify-center mb-12 w-full"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            id="hero-logo-motion-container"
+          >
+            <img 
+              src="https://i.ibb.co/qMvn8DkZ/7aa7c204-8013-423d-b2a6-ba979a344318.jpg" 
+              alt="Wide Logo" 
+              className="h-24 sm:h-36 md:h-48 lg:h-56 w-auto object-contain"
+              id="hero-logo-img"
+              width="1200"
+              height="350"
+              loading="lazy"
+            />
+          </motion.div>
+
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
@@ -96,7 +114,14 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
+            <motion.div 
+              className="lg:w-1/2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              id="why-choose-us-text"
+            >
               <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tight">
                 {language === 'en' ? 'Trusted by the' : 'Con la Confianza de la'} <br/>
                 <span className="text-green-500 underline decoration-yellow-400 decoration-3 underline-offset-8">Yakima Community</span>
@@ -116,62 +141,116 @@ export default function Home() {
                   <span>{language === 'en' ? 'Licensed Professionals' : 'Profesionales con Licencia'}</span>
                 </div>
               </div>
-            </div>
-            <div className="lg:w-1/2 w-full">
+            </motion.div>
+            <motion.div 
+              className="lg:w-1/2 w-full"
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              id="why-choose-us-video"
+            >
               <div className="relative group aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
-                <iframe 
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/bjfTtCXNoqE?rel=0" 
-                  title="Trusted by the Yakima Community"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                  allowFullScreen
-                ></iframe>
+                <video 
+                  className="w-full h-full object-cover"
+                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/why-choose-us.mp4"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  controls
+                ></video>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Services Grid Preview */}
       <section className="py-24 bg-white">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto px-6"
-        >
-          <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+            id="services-section-header"
+          >
             <h2 className="text-4xl font-extrabold text-slate-900">{t.services.title}</h2>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              id="mini-service-card-tax"
+            >
+              <MiniServiceCard 
+                icon={<ReceiptText className="text-green-700" />}
+                title={t.services.taxPrep}
+                description={t.services.taxPrepDesc}
+                ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              id="mini-service-card-bizformation"
+            >
+              <MiniServiceCard 
+                icon={<Building2 className="text-green-700" />}
+                title={t.services.bizFormation}
+                description={t.services.bizFormationDesc}
+                ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              id="mini-service-card-bookkeeping"
+            >
+              <MiniServiceCard 
+                icon={<BrainCircuit className="text-green-700" />}
+                title={t.services.bookkeeping}
+                description={t.services.bookkeepingDesc}
+                ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
+              />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              id="mini-service-card-payroll"
+            >
+              <MiniServiceCard 
+                 icon={<Users className="text-green-700" />}
+                title={t.services.payroll}
+                description={t.services.payrollDesc}
+                ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
+              />
+            </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <MiniServiceCard 
-              icon={<ReceiptText className="text-green-700" />}
-              title={t.services.taxPrep}
-              description={t.services.taxPrepDesc}
-              ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
-            />
-            <MiniServiceCard 
-              icon={<BrainCircuit className="text-green-700" />}
-              title={t.services.bookkeeping}
-              description={t.services.bookkeepingDesc}
-              ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
-            />
-            <MiniServiceCard 
-              icon={<Users className="text-green-700" />}
-              title={t.services.payroll}
-              description={t.services.payrollDesc}
-              ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
-            />
-          </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* About Section */}
       <section className="py-24 bg-white">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto px-6"
         >
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -183,6 +262,9 @@ export default function Home() {
                     src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
                     alt="Lilia consulting" 
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-slate-100 object-cover"
+                    width="800"
+                    height="600"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 p-6 bg-slate-900 text-white rounded-3xl shadow-xl z-20">
@@ -202,7 +284,13 @@ export default function Home() {
                 {t.about.missionText}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-                <div className="flex items-start space-x-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex items-start space-x-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"
+                >
                   <div className="p-2 bg-white shadow-sm border border-slate-200 rounded-xl text-green-700">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
@@ -210,8 +298,14 @@ export default function Home() {
                     <h4 className="font-bold text-slate-900">{t.legal.confidentiality ?? (language === 'en' ? 'Total Privacy' : 'Privacidad Total')}</h4>
                     <p className="text-slate-500 text-xs">{t.home.conf}</p>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4 p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                  className="flex items-start space-x-4 p-4 bg-slate-50 rounded-2xl border border-slate-100"
+                >
                   <div className="p-2 bg-white shadow-sm border border-slate-200 rounded-xl text-green-700">
                     <Map className="w-6 h-6" />
                   </div>
@@ -219,7 +313,7 @@ export default function Home() {
                     <h4 className="font-bold text-slate-900">{language === 'en' ? 'Central WA' : 'Centro de WA'}</h4>
                     <p className="text-slate-500 text-xs text-nowrap">{language === 'en' ? 'We travel to serve you.' : 'Viajamos para servirle.'}</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <Link 
                 href="/about"
@@ -236,9 +330,10 @@ export default function Home() {
       {/* Areas We Serve Section */}
       <section className="py-24 bg-slate-50 border-y border-slate-100">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto px-6"
         >
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
@@ -264,8 +359,8 @@ export default function Home() {
                  key={index}
                  initial={{ opacity: 0, y: 20 }}
                  whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true }}
-                 transition={{ delay: index * 0.1 }}
+                 viewport={{ once: true, margin: "-100px" }}
+                 transition={{ duration: 0.5, delay: index * 0.1 }}
                  className="bg-white p-8 rounded-3xl border border-slate-200/60 shadow-sm hover:shadow-xl transition-all"
                >
                  <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-green-700 mb-6 border border-slate-100">
@@ -282,9 +377,10 @@ export default function Home() {
       {/* CTA Download Banner */}
       <section className="bg-white py-16 px-6">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
           className="max-w-7xl mx-auto"
         >
           <div className="bg-green-900 rounded-[3rem] p-8 md:p-16 border border-green-800 flex flex-col md:flex-row items-center justify-between shadow-2xl shadow-green-900/40 overflow-hidden relative">

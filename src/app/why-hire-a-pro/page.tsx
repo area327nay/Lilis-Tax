@@ -52,6 +52,9 @@ export default function WhyHirePro() {
               src="https://i.ibb.co/ZRnXpdzD/PS1-0741.jpg" 
               alt="Professional consultation" 
               className="w-full h-full rounded-[3rem] shadow-2xl border border-slate-100 object-cover"
+              width="1600"
+              height="900"
+              loading="lazy"
             />
           </div>
         </motion.div>
@@ -83,7 +86,7 @@ export default function WhyHirePro() {
                 {index === 1 && ( // Audit Protection
                  <div className="relative w-full aspect-video mt-4">
                    <img 
-                     src="https://i.ibb.co/wFKjnnvb/PS1-0832.jpg" 
+                     src="https://i.ibb.co/wFKjnnvb/PS1-0832.jpg" width="800" height="450" loading="lazy" 
                      alt="Audit support" 
                      className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
                    />
@@ -92,7 +95,7 @@ export default function WhyHirePro() {
                {index === 7 && ( // Peace of Mind
                  <div className="relative w-full aspect-video mt-4">
                    <img 
-                     src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
+                     src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" width="800" height="450" loading="lazy" 
                      alt="Peace of mind" 
                      className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
                    />

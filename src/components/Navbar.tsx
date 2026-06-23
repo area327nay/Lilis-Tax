@@ -28,38 +28,17 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 print:hidden">
       <div className="max-w-7xl mx-auto px-6 h-16">
-        <div className="flex justify-between items-center h-full">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              {/* Desktop Wide Logo */}
-              <div className="hidden md:block">
-                <img 
-                  src="https://i.ibb.co/qMvn8DkZ/7aa7c204-8013-423d-b2a6-ba979a344318.jpg" 
-                  alt="Wide Logo" 
-                  className="h-10 w-auto"
-                />
-              </div>
-              {/* Mobile Stacked Logo */}
-              <div className="md:hidden">
-                <img 
-                  src="https://i.ibb.co/gM20q1WT/59a4a091-9797-4939-83e4-9d39172ef3bb.jpg" 
-                  alt="Lili's Tax Services Logo" 
-                  className="h-10 w-auto"
-                />
-              </div>
-            </Link>
-          </div>
-
+        <div className="flex justify-end md:justify-center items-center h-full">
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="flex gap-6 text-sm font-medium text-slate-600">
+            <div className="flex gap-8 text-lg font-semibold text-slate-600">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   href={item.path}
                   className={cn(
                     "transition-colors hover:text-green-700",
-                    isActive(item.path) && "text-green-700 font-bold"
+                    isActive(item.path) && "text-green-700"
                   )}
                 >
                   {item.name}
@@ -72,18 +51,18 @@ export default function Navbar() {
                 <button 
                   onClick={() => setLanguage('en')}
                   className={cn(
-                    "text-xs font-bold uppercase tracking-widest transition-colors",
-                    language === 'en' ? "text-green-700" : "text-slate-400 hover:text-slate-600"
+                    "text-lg font-semibold uppercase transition-colors",
+                    language === 'en' ? "text-green-700 font-bold" : "text-slate-400 hover:text-slate-600"
                   )}
                 >
                   EN
                 </button>
-                <span className="w-px h-3 bg-slate-300"></span>
+                <span className="w-px h-4 bg-slate-300"></span>
                 <button 
                   onClick={() => setLanguage('es')}
                   className={cn(
-                    "text-xs font-bold uppercase tracking-widest transition-colors",
-                    language === 'es' ? "text-green-700" : "text-slate-400 hover:text-slate-600"
+                    "text-lg font-semibold uppercase transition-colors",
+                    language === 'es' ? "text-green-700 font-bold" : "text-slate-400 hover:text-slate-600"
                   )}
                 >
                   ES

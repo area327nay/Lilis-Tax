@@ -44,7 +44,7 @@ export default function Contact() {
                <div className="absolute -inset-4 bg-white/50 rounded-[3rem] blur-2xl"></div>
                <div className="relative z-10 w-full h-[350px]">
                   <img 
-                    src="https://i.ibb.co/Hf4X4Byb/PS1-0798.jpg" 
+                    src="https://i.ibb.co/Hf4X4Byb/PS1-0798.jpg" width="800" height="350" loading="lazy" 
                     alt="Contact us" 
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover" 
                   />
@@ -72,6 +72,13 @@ export default function Contact() {
                 title={t.contact.callUs}
                 content="(509) 902-0922"
                 link="tel:+15099020922"
+              />
+              <ContactInfoItem 
+                icon={<WhatsAppIcon />}
+                title={t.contact.whatsApp}
+                content="(509) 823-9880"
+                link="https://wa.me/15098239880"
+                external
               />
               <ContactInfoItem 
                 icon={<Mail />}
@@ -222,17 +229,26 @@ export default function Contact() {
   );
 }
 
-function ContactInfoItem({ icon, title, content, link }: { icon: React.ReactElement, title: string, content: string, link?: string }) {
-  const contentElement = link ? (
-    <a href={link} className="text-xl font-extrabold text-slate-900 hover:text-green-700 transition-colors tracking-tight">
-      {content}
-    </a>
-  ) : (
-    <p className="text-xl font-extrabold text-slate-900 tracking-tight">{content}</p>
-  );
-
+function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <div className="flex gap-6 group">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={props.className}
+      {...props}
+    >
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+  );
+}
+
+function ContactInfoItem({ icon, title, content, link, external }: { icon: React.ReactElement, title: string, content: string, link?: string, external?: boolean }) {
+  const innerContent = (
+    <>
       <div className="w-14 h-14 bg-slate-50 border border-slate-100 flex items-center justify-center rounded-2xl text-green-700 group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
         {React.cloneElement(icon, { 
           className: 'w-6 h-6', 
@@ -241,8 +257,33 @@ function ContactInfoItem({ icon, title, content, link }: { icon: React.ReactElem
       </div>
       <div>
         <h4 className="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-1">{title}</h4>
-        {contentElement}
+        {link ? (
+          <span className="text-xl font-extrabold text-slate-900 group-hover:text-green-700 transition-colors tracking-tight">
+            {content}
+          </span>
+        ) : (
+          <p className="text-xl font-extrabold text-slate-900 tracking-tight">{content}</p>
+        )}
       </div>
+    </>
+  );
+
+  if (link) {
+    return (
+      <a 
+        href={link} 
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        className="flex gap-6 group cursor-pointer text-left w-full"
+      >
+        {innerContent}
+      </a>
+    );
+  }
+
+  return (
+    <div className="flex gap-6 group text-left">
+      {innerContent}
     </div>
   );
 }

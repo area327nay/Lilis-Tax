@@ -2,7 +2,7 @@
 
 import { useLanguage } from '../LanguageContext';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -17,6 +17,9 @@ export default function Footer() {
                 src="https://i.ibb.co/gM20q1WT/59a4a091-9797-4939-83e4-9d39172ef3bb.jpg" 
                 alt="Stacked Logo" 
                 className="h-16 w-auto"
+                width="256"
+                height="256"
+                loading="lazy"
               />
             </Link>
             <p className="text-slate-400 text-lg leading-relaxed max-w-sm mb-8">
@@ -27,10 +30,16 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="font-bold underline decoration-green-900/50 underline-offset-4">(509) 902-0922</span>
               </a>
-              <div className="flex items-center gap-3 text-slate-400">
-                <MapPin className="w-4 h-4 text-green-600" />
-                <span className="font-medium">2642 Main St, Union Gap, WA 98903</span>
-              </div>
+              <a 
+                href="https://www.google.com/maps/dir/?api=1&destination=2642+Main+St+Suite+K,+Union+Gap,+WA+98903" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                id="footer-address-link"
+              >
+                <MapPin className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
+                <span className="font-medium hover:underline">2642 Main St Suite K, Union Gap, WA 98903</span>
+              </a>
               <a href="mailto:Lilistaxservices@gmail.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
                 <Mail className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
                 <span className="font-medium">Lilistaxservices@gmail.com</span>
@@ -40,11 +49,16 @@ export default function Footer() {
               <a href="https://www.facebook.com/LiliTaxServices/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all">
-                <Linkedin className="w-5 h-5" />
+              <a 
+                href="https://wa.me/15098239880" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all"
+                id="footer-whatsapp-link"
+              >
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.479 1.332 5l-1.42 5.187 5.309-1.393c1.472.803 3.125 1.226 4.767 1.226h.005c5.503 0 9.985-4.482 9.985-9.988C22 6.482 17.518 2 12.012 2zm6.05 14.159c-.248.697-1.238 1.272-1.744 1.356-.464.077-.1.22-3.003-1a13.376 13.376 0 0 1-5.186-4.572c-1.47-2.01-1.96-3.856-1.365-5.068.223-.453.69-.74 1.15-.74.155 0 .296.002.418.008.283.013.431.026.621.433.243.518.832 2.03.904 2.179.073.149.122.323.023.52-.099.198-.148.322-.296.496-.149.174-.313.388-.446.52-.149.149-.304.31-.131.607.174.296.772 1.272 1.657 2.059.885.787 1.637 1.031 1.934 1.18.296.149.469.124.643-.075.174-.198.743-.865.942-1.162.198-.297.396-.248.669-.149.272.099 1.733.817 2.03.965.297.149.495.223.569.347.074.124.074.721-.174 1.417z"/>
+                </svg>
               </a>
             </div>
           </div>
@@ -53,6 +67,7 @@ export default function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">{t.nav.services}</h4>
             <ul className="space-y-4 text-slate-400 font-medium">
               <li><Link href="/services" className="hover:text-white transition-colors">{t.services.taxPrep}</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">{t.services.bizFormation}</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">{t.services.bookkeeping}</Link></li>
               <li><Link href="/services" className="hover:text-white transition-colors">{t.services.payroll}</Link></li>
               <li><Link href="/why-hire-a-pro" className="hover:text-white transition-colors">{t.nav.pro}</Link></li>
@@ -62,7 +77,7 @@ export default function Footer() {
 
           <div>
              <h4 className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-6">{t.areas.title}</h4>
-             <ul className="space-y-4 text-slate-400 font-medium">
+             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-x-4 gap-y-4 text-slate-400 font-medium">
                {t.areas.cities.map((city, idx) => (
                  <li key={idx} className="flex items-center gap-2">
                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
@@ -91,12 +106,12 @@ export default function Footer() {
           "@context": "https://schema.org",
           "@type": "TaxPreparationService",
           "name": "Lili's Tax Services, LLC",
-          "description": "Professional tax preparation, bookkeeping, and payroll services in Union Gap, Yakima, Mattawa, Othello, and Quincy.",
+          "description": "Professional tax preparation, bookkeeping, and payroll services in Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities (Pasco, Kennewick, Richland).",
           "telephone": "+15099020922",
           "url": "https://lilistax.com",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "2642 Main St",
+            "streetAddress": "2642 Main St Suite K",
             "addressLocality": "Union Gap",
             "addressRegion": "WA",
             "postalCode": "98903",
@@ -107,7 +122,9 @@ export default function Footer() {
             { "@type": "City", "name": "Yakima" },
             { "@type": "City", "name": "Mattawa" },
             { "@type": "City", "name": "Othello" },
-            { "@type": "City", "name": "Quincy" }
+            { "@type": "City", "name": "Quincy" },
+            { "@type": "City", "name": "Grandview" },
+            { "@type": "City", "name": "Tri-Cities" }
           ],
           "priceRange": "$$"
         })}} />

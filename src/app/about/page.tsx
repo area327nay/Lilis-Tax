@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
 import { Target, Heart, History, MapPin } from 'lucide-react';
@@ -63,13 +63,15 @@ export default function About() {
               {/* Story Video */}
               <div className="mt-12 group">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-100">
-                  <iframe 
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/9dce-sjlJWw?rel=0" 
-                    title="Lili's Tax Services Story"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowFullScreen
-                  ></iframe>
+                  <video 
+                    className="w-full h-full object-cover"
+                    src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/our-story.mp4"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    controls
+                  ></video>
                 </div>
               </div>
             </div>
@@ -80,6 +82,9 @@ export default function About() {
                   src="https://i.ibb.co/6R9mJJcS/PS1-0748.jpg" 
                   alt="Lilia at computer" 
                   className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
                 />
               </div>
             </div>

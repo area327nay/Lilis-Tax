@@ -42,6 +42,9 @@ export interface Translation {
     taxPrep: string;
     taxPrepDesc: string;
     taxPrepDetails: string[];
+    bizFormation: string;
+    bizFormationDesc: string;
+    bizFormationDetails: string[];
     bookkeeping: string;
     bookkeepingDesc: string;
     bookkeepingDetails: string[];
@@ -101,6 +104,7 @@ export interface Translation {
     coverageTitle: string;
     coverageSub: string;
     callUs: string;
+    whatsApp: string;
     emailUs: string;
     officeHours: string;
     serviceArea: string;
@@ -196,7 +200,7 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       title: 'Expert Tax Preparation in Union Gap & Yakima Area.',
-      subtitle: 'Professional, reliable, and educational financial services for families and small businesses in Central Washington since 2009. Serving Yakima, Mattawa, Othello, and Quincy.',
+      subtitle: 'Professional, reliable, and educational financial services for families and small businesses in Central Washington since 2009. Serving Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities (Pasco, Kennewick, Richland).',
       ctaMain: 'Call to Schedule',
       ctaSecondary: 'Free Consultation',
     },
@@ -217,7 +221,7 @@ export const translations: Record<Language, Translation> = {
         integrity: 'Integrity',
         integrityDesc: 'Complete confidentiality and honest solutions optimized for the growth of local businesses.',
         community: 'Local Commitment',
-        communityDesc: 'Based in Union Gap, we travel to Yakima, Mattawa, Othello, and Quincy to serve you where you are.',
+        communityDesc: 'Based in Union Gap, we travel to Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities (Pasco, Kennewick, Richland) to serve you where you are.',
       }
     },
     services: {
@@ -230,6 +234,15 @@ export const translations: Record<Language, Translation> = {
         'Amended Tax Returns',
         'State & Local Tax Support',
         'Year-round Proactive Planning'
+      ],
+      bizFormation: 'Business Formation & LLC Setup',
+      bizFormationDesc: 'Step-by-step guidance for new business applications, LLC registration, and state licensing.',
+      bizFormationDetails: [
+        'LLC & Corporation Registration',
+        'EIN & Tax ID Obtainment',
+        'State & Local Business Licensing',
+        'Operating Agreements Support',
+        'New Business Compliance Consulting'
       ],
       bookkeeping: 'Bookkeeping',
       bookkeepingDesc: 'Keeping your financial records accurate and up-to-date throughout the year.',
@@ -251,7 +264,7 @@ export const translations: Record<Language, Translation> = {
       ],
       heroBadge: 'Our expertise',
       heroTitle: 'Expert Services.',
-      heroSub: 'Professional financial solutions tailored for families and agricultural businesses in Union Gap, Yakima, Mattawa, Othello, and Quincy.',
+      heroSub: 'Professional financial solutions tailored for families and agricultural businesses in Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities (Pasco, Kennewick, Richland).',
       ctaRequest: 'Request a Quote',
       proBridgeBadge: 'Strategic Advantage',
       proBridgeTitle: 'Not sure why you should hire a professional?',
@@ -309,17 +322,18 @@ export const translations: Record<Language, Translation> = {
         bookingBtn: 'Online Booking Tool'
       },
       hours: 'Mon-Fri: 10am - 7pm | Sat: 10am - 5pm | Sun: Closed',
-      location: '2642 Main St, Union Gap, WA 98903',
+      location: '2642 Main St Suite K, Union Gap, WA 98903',
       coverageTitle: 'Regional Coverage',
       coverageSub: 'Union Gap Office & Central WA Mobile Services',
       callUs: 'Call Us',
+      whatsApp: 'WhatsApp',
       emailUs: 'Email Us',
       officeHours: 'Office Hours',
       serviceArea: 'Our Office'
     },
     areas: {
       title: 'Regional Coverage',
-      subtitle: 'Primary office in Union Gap. Serving Yakima, Mattawa, Othello, and Quincy through mobile services.',
+      subtitle: 'Primary office in Union Gap. Serving Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities through mobile services.',
       badge: 'Local Presence',
       cta: 'Schedule a Visit',
       cities: [
@@ -327,7 +341,9 @@ export const translations: Record<Language, Translation> = {
         { name: 'Yakima', desc: 'Central consultation and secure document handling.' },
         { name: 'Mattawa', desc: 'Travel service and convenient document drop-off points.' },
         { name: 'Othello', desc: 'Bi-weekly visits and mobile tax preparation services.' },
-        { name: 'Quincy', desc: 'Scheduled drop-offs and remote filing support.' }
+        { name: 'Quincy', desc: 'Scheduled drop-offs and remote filing support.' },
+        { name: 'Grandview', desc: 'Mobile consultation and individual/business tax services.' },
+        { name: 'Tri-Cities', desc: 'Comprehensive mobile services for Pasco, Kennewick, and Richland.' }
       ]
     },
     legal: {
@@ -369,7 +385,7 @@ export const translations: Record<Language, Translation> = {
         successSub: 'Your checklist is ready for download.',
         downloadLink: 'Download Checklist (PDF)',
       },
-      footerDesc: 'Professional tax preparation, bookkeeping, and payroll services you can trust. Serving families and businesses in Union Gap, Yakima, Mattawa, Othello, and Quincy since 2009.',
+      footerDesc: 'Professional tax preparation, bookkeeping, and payroll services you can trust. Serving families and businesses in Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview, and Tri-Cities since 2009.',
     },
     checklist: {
       heroBadge: 'Client Resources',
@@ -437,7 +453,7 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       title: 'Su Reembolso en Union Gap y el Área de Yakima.',
-      subtitle: 'Preparación de impuestos experta con un toque personal para familias y pequeños negocios en Central WA. Sirviendo a Yakima, Mattawa, Othello y Quincy.',
+      subtitle: 'Preparación de impuestos experta con un toque personal para familias y pequeños negocios en Central WA. Sirviendo a Yakima, Mattawa, Othello, Quincy, Grandview y Tri-Cities (Pasco, Kennewick, Richland).',
       ctaMain: 'Llamar para Cita',
       ctaSecondary: 'Consulta Gratis',
     },
@@ -458,7 +474,7 @@ export const translations: Record<Language, Translation> = {
         integrity: 'Integridad',
         integrityDesc: 'Confidencialidad total y soluciones honestas optimizadas para el crecimiento de negocios locales.',
         community: 'Compromiso Local',
-        communityDesc: 'Desde nuestra oficina en Union Gap, viajamos a Yakima, Mattawa, Othello y Quincy para servirle.',
+        communityDesc: 'Desde nuestra oficina en Union Gap, viajamos a Yakima, Mattawa, Othello, Quincy, Grandview y Tri-Cities (Pasco, Kennewick, Richland) para servirle.',
       }
     },
     services: {
@@ -471,6 +487,15 @@ export const translations: Record<Language, Translation> = {
         'Declaraciones de impuestos enmendadas',
         'Soporte de impuestos estatales y locales',
         'Planificación proactiva durante todo el año'
+      ],
+      bizFormation: 'Formación de Empresas y Creación de LLC',
+      bizFormationDesc: 'Asesoría paso a paso para solicitudes de nuevos negocios, registro de LLC y licencias estatales.',
+      bizFormationDetails: [
+        'Registro de LLC y Corporaciones',
+        'Obtención de EIN y Número de Impuestos',
+        'Licencias de Negocios Estatales y Locales',
+        'Asesoría en Acuerdos de Operación (Operating Agreements)',
+        'Consultoría de Cumplimiento para Nuevos Negocios'
       ],
       bookkeeping: 'Contabilidad',
       bookkeepingDesc: 'Mantener sus registros financieros precisos y actualizados durante todo el año.',
@@ -492,7 +517,7 @@ export const translations: Record<Language, Translation> = {
       ],
       heroBadge: 'Nuestra experiencia',
       heroTitle: 'Servicios Expertos.',
-      heroSub: 'Soluciones financieras profesionales diseñadas para familias y negocios agrícolas en Union Gap, Yakima, Mattawa, Othello y Quincy.',
+      heroSub: 'Soluciones financieras profesionales diseñadas para familias y negocios agrícolas en Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview y Tri-Cities (Pasco, Kennewick, Richland).',
       ctaRequest: 'Solicite una Cotización',
       proBridgeBadge: 'Ventaja Estratégica',
       proBridgeTitle: '¿No está seguro de por qué contratar a un profesional?',
@@ -550,17 +575,18 @@ export const translations: Record<Language, Translation> = {
         bookingBtn: 'Herramienta de Reserva en Línea'
       },
       hours: 'Lun-Vie: 10am - 7pm | Sab: 10am - 5pm | Dom: Cerrado',
-      location: '2642 Main St, Union Gap, WA 98903',
+      location: '2642 Main St Suite K, Union Gap, WA 98903',
       coverageTitle: 'Cobertura Regional',
       coverageSub: 'Oficina en Union Gap y Servicios Móviles en Central WA',
       callUs: 'Llámenos',
+      whatsApp: 'WhatsApp',
       emailUs: 'Correo',
       officeHours: 'Horario',
       serviceArea: 'Nuestra Oficina'
     },
     areas: {
       title: 'Cobertura Regional',
-      subtitle: 'Oficina principal en Union Gap. Sirviendo a Yakima, Mattawa, Othello y Quincy.',
+      subtitle: 'Oficina principal en Union Gap. Sirviendo a Yakima, Mattawa, Othello, Quincy, Grandview y Tri-Cities a través de servicios móviles.',
       badge: 'Presencia Local',
       cta: 'Programar Visita',
       cities: [
@@ -568,7 +594,9 @@ export const translations: Record<Language, Translation> = {
         { name: 'Yakima', desc: 'Consulta central y manejo seguro de documentos.' },
         { name: 'Mattawa', desc: 'Servicio de viajes y puntos convenientes de entrega de documentos.' },
         { name: 'Othello', desc: 'Visitas quincenales y servicios móviles de preparación de impuestos.' },
-        { name: 'Quincy', desc: 'Entregas programadas y soporte de presentación remota.' }
+        { name: 'Quincy', desc: 'Entregas programadas y soporte de presentación remota.' },
+        { name: 'Grandview', desc: 'Consultas móviles y servicios de impuestos individuales y comerciales.' },
+        { name: 'Tri-Cities', desc: 'Servicios móviles completos para Pasco, Kennewick y Richland.' }
       ]
     },
     legal: {
@@ -610,7 +638,7 @@ export const translations: Record<Language, Translation> = {
         successSub: 'Su lista está lista para descargar.',
         downloadLink: 'Descargar Lista (PDF)',
       },
-      footerDesc: 'Servicios profesionales de preparación de impuestos, contabilidad y nómina en los que puede confiar. Sirviendo a familias y negocios en Union Gap, Yakima, Mattawa, Othello y Quincy desde 2009.',
+      footerDesc: 'Servicios profesionales de preparación de impuestos, contabilidad y nómina en los que puede confiar. Sirviendo a familias y negocios en Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview y Tri-Cities desde 2009.',
     },
     checklist: {
       heroBadge: 'Recursos para Clientes',

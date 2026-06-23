@@ -1,6 +1,6 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
 import { Receipt, Building2, Wallet, Briefcase, FileText, BarChart3, ChevronRight, Users } from 'lucide-react';
@@ -20,6 +20,17 @@ export default function Services() {
         'https://i.ibb.co/39FcM18h/PS1-0818.jpg'
       ],
       alt: "Tax preparation deductions"
+    },
+    {
+      id: 'bizformation',
+      title: t.services.bizFormation,
+      icon: <Building2 className="w-12 h-12" />,
+      description: t.services.bizFormationDesc,
+      details: t.services.bizFormationDetails,
+      images: [
+        'https://i.ibb.co/ZRnXpdzD/PS1-0741.jpg'
+      ],
+      alt: "Business startup consulting"
     },
     {
       id: 'bookkeeping',
@@ -91,8 +102,8 @@ export default function Services() {
                   </p>
                   <ul className="space-y-4 mb-12">
                     {service.details.map((detail, dIdx) => (
-                      <li key={dIdx} className="flex items-center space-x-3 text-slate-700 font-bold text-sm">
-                        <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
+                      <li key={dIdx} className="flex items-start gap-4 text-slate-600 font-normal text-[1.05rem] leading-relaxed">
+                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2.5 shrink-0"></div>
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -122,6 +133,9 @@ export default function Services() {
                           src={img} 
                           alt={service.alt || service.title}  
                           className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100" 
+                          width={service.images.length === 1 ? 1600 : 800}
+                          height={service.images.length === 1 ? 900 : 1000}
+                          loading="lazy"
                         />
                       </div>
                     </motion.div>

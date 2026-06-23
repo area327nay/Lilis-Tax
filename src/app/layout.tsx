@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Lili's Tax Services | Professional Tax & Bookkeeping in Union Gap",
   description: "Lili's Tax Services offers expert tax preparation, bookkeeping, and payroll services in Union Gap, Yakima, and surrounding areas. Bilingual support available.",
-  keywords: "tax services, tax preparation, bookkeeping, payroll, Union Gap, Yakima, Mattawa, Othello, Quincy, Spanish speaking tax preparer",
+  keywords: "tax services, tax preparation, bookkeeping, payroll, Union Gap, Yakima, Mattawa, Othello, Quincy, Grandview, Tri-Cities, Pasco, Kennewick, Richland, Spanish speaking tax preparer",
   icons: {
     icon: "https://i.ibb.co/gM20q1WT/59a4a091-9797-4939-83e4-9d39172ef3bb.jpg",
   },
