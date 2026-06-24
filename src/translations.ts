@@ -186,6 +186,17 @@ export interface Translation {
       cta: string;
     };
   };
+  testimonials: {
+    title: string;
+    subtitle: string;
+    badge: string;
+    items: {
+      quote: string;
+      author: string;
+      role: string;
+      location: string;
+    }[];
+  };
 }
 
 export const translations: Record<Language, Translation> = {
@@ -441,6 +452,31 @@ export const translations: Record<Language, Translation> = {
         disclaimer: 'Please keep all original receipts, mileage logs, and home office records for at least 7 years. Digital copies are accepted by the IRS but must be legible.',
         cta: 'Book Your Appointment'
       }
+    },
+    testimonials: {
+      title: 'Client Success Stories',
+      subtitle: 'Read how we help families and small businesses in Yakima Valley and surrounding areas achieve financial clarity.',
+      badge: 'Testimonials',
+      items: [
+        {
+          quote: "Lilia has been preparing our family's taxes for over a decade. She is incredibly professional, bilingual, and explains every deduction so we actually understand our return. We wouldn't go anywhere else!",
+          author: "Maria S.",
+          role: "Family Tax Client",
+          location: "Yakima, WA"
+        },
+        {
+          quote: "We trust Lili's Tax Services with all our small business bookkeeping and payroll. Her local expertise in Washington regulations and personalized attention has been a key factor in our business growth.",
+          author: "Carlos G.",
+          role: "Local Business Owner",
+          location: "Union Gap, WA"
+        },
+        {
+          quote: "Finding a tax preparer who truly cares and explains things clearly is rare. Lilia helped us resolve previous years' IRS letters with total confidence and ease. Highly recommend!",
+          author: "David R.",
+          role: "Individual Filer",
+          location: "Mattawa, WA"
+        }
+      ]
     }
   },
   es: {
@@ -695,6 +731,31 @@ export const translations: Record<Language, Translation> = {
         disclaimer: 'Por favor, guarde todos los recibos originales, registros de millaje y registros de la oficina en casa por al menos 7 años. El IRS acepta copias digitales, pero deben ser legibles.',
         cta: 'RESERVE SU CITA'
       }
+    },
+    testimonials: {
+      title: 'Historias de Éxito de Clientes',
+      subtitle: 'Vea cómo ayudamos a las familias y pequeños negocios en el Valle de Yakima y áreas cercanas a lograr claridad financiera.',
+      badge: 'Testimonios',
+      items: [
+        {
+          quote: "Lilia ha estado preparando los impuestos de nuestra familia durante más de una década. Es increíblemente profesional, bilingüe y explica cada deducción para que realmente entendamos nuestra declaración.",
+          author: "María S.",
+          role: "Cliente de Impuestos Familiares",
+          location: "Yakima, WA"
+        },
+        {
+          quote: "Confiamos en Lili's Tax Services para toda la contabilidad y nómina de nuestro pequeño negocio. Su experiencia local en las regulaciones de Washington y su atención personalizada han sido claves.",
+          author: "Carlos G.",
+          role: "Dueño de Negocio Local",
+          location: "Union Gap, WA"
+        },
+        {
+          quote: "Encontrar un preparador de impuestos que realmente se preocupe y explique las cosas con claridad es raro. Lilia nos ayudó a resolver cartas del IRS de años anteriores con total confianza. ¡Muy recomendada!",
+          author: "David R.",
+          role: "Declarante Individual",
+          location: "Mattawa, WA"
+        }
+      ]
     }
   }
 };

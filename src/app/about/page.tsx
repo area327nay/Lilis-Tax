@@ -78,7 +78,7 @@ export default function About() {
               <div className="relative w-full aspect-[4/5]">
                 <img 
                   src="https://i.ibb.co/6R9mJJcS/PS1-0748.jpg" 
-                  alt="Lilia at computer" 
+                  alt="Lilia Gomez-Munguia providing professional tax preparation and bookkeeping services in Union Gap and Yakima" 
                   className="w-full h-full rounded-[2.5rem] shadow-2xl object-cover border border-slate-100"
                   width="800"
                   height="1000"

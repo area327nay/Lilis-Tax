@@ -3,7 +3,7 @@
 import React, { ReactNode, useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, Clock, Send, Calendar, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -45,7 +45,7 @@ export default function Contact() {
                <div className="relative z-10 w-full h-[350px]">
                   <img 
                     src="https://i.ibb.co/Hf4X4Byb/PS1-0798.jpg" width="800" height="350" loading="lazy" 
-                    alt="Contact us" 
+                    alt="Lili's Tax Services - Contact us for professional tax preparation and bookkeeping services in Union Gap and Yakima" 
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-white/20 object-cover" 
                   />
                </div>
@@ -206,20 +206,6 @@ export default function Contact() {
                       <Send className="w-5 h-5" aria-hidden="true" />
                       <span>{t.contact.form.submit}</span>
                     </button>
-                    
-                    <div className="text-center py-2">
-                       <span className="text-slate-300 text-xs font-extrabold uppercase tracking-widest">{t.contact.form.or}</span>
-                    </div>
-
-                    <a 
-                      href="https://calendly.com/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-secondary w-full py-6 flex items-center justify-center gap-3 text-lg border-slate-900 border-2"
-                    >
-                      <Calendar className="w-5 h-5" aria-hidden="true" />
-                      <span>{t.contact.form.bookingBtn}</span>
-                    </a>
                   </form>
                  </>
                )}

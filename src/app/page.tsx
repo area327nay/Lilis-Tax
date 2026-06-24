@@ -22,7 +22,9 @@ import {
   User,
   CalendarDays,
   LineChart,
-  Briefcase
+  Briefcase,
+  Mail,
+  Download
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -31,6 +33,23 @@ import ChecklistModal from '../components/ChecklistModal';
 export default function Home() {
   const { t, language } = useLanguage();
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const [inlineFormData, setInlineFormData] = React.useState({ firstName: '', email: '' });
+  const [isInlineSubmitted, setIsInlineSubmitted] = React.useState(false);
+  const [isInlineLoading, setIsInlineLoading] = React.useState(false);
+
+  const handleInlineSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsInlineLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsInlineLoading(false);
+    setIsInlineSubmitted(true);
+  };
+
+  const handleInlineDownload = () => {
+    const asset = language === 'es' ? '/tax-checklist-es.pdf' : '/tax-checklist-en.pdf';
+    window.open(asset, '_blank');
+  };
 
   return (
     <div className="overflow-hidden">
@@ -46,7 +65,7 @@ export default function Home() {
           >
             <img 
               src="https://i.ibb.co/qMvn8DkZ/7aa7c204-8013-423d-b2a6-ba979a344318.jpg" 
-              alt="Wide Logo" 
+              alt="Lili's Tax Services - Tax preparation and bookkeeping services in Union Gap and Yakima" 
               className="h-24 sm:h-36 md:h-48 lg:h-56 w-auto object-contain"
               id="hero-logo-img"
               width="1200"
@@ -79,13 +98,13 @@ export default function Home() {
                   <Phone className="w-5 h-5 shrink-0" />
                   <span>{t.hero.ctaMain}</span>
                 </a>
-                <button
-                  onClick={() => setIsModalOpen(true)}
+                <a
+                  href="#checklist-form-section"
                   className="btn-secondary gap-3"
                 >
                   <FileDown className="w-5 h-5 text-green-700" />
                   <span>{t.home.checklistBtn}</span>
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -421,7 +440,7 @@ export default function Home() {
                 <div className="relative z-10 w-full h-[400px] md:h-[500px]">
                   <img 
                     src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
-                    alt="Lilia consulting" 
+                    alt="Lilia Gomez-Munguia providing professional tax preparation and bookkeeping services in Union Gap and Yakima" 
                     className="w-full h-full rounded-[2.5rem] shadow-2xl border border-slate-100 object-cover"
                     width="800"
                     height="600"
@@ -535,32 +554,115 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* CTA Download Banner */}
-      <section className="bg-white py-16 px-6">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="max-w-7xl mx-auto"
-        >
-          <div className="bg-green-900 rounded-[3rem] p-8 md:p-16 border border-green-800 flex flex-col md:flex-row items-center justify-between shadow-2xl shadow-green-900/40 overflow-hidden relative">
-            <div className="relative z-10 text-center md:text-left mb-8 md:mb-0">
-               <h2 className="text-4xl font-extrabold text-white mb-4 tracking-tight leading-none">{t.home.checklistTitle}</h2>
-               <p className="text-green-100 text-lg max-w-md">{t.home.checklistSub}</p>
+      {/* Checklist Request Form Section */}
+      <section id="checklist-form-section" className="bg-slate-50 py-24 border-t border-slate-200/50 scroll-mt-20">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-[3rem] p-10 md:p-16 border border-slate-100 shadow-2xl shadow-slate-200/40 relative overflow-hidden"
+          >
+            {/* Abstract background shapes */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl opacity-60 -mr-20 -mt-20 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-yellow-50 rounded-full blur-3xl opacity-60 -ml-16 -mb-16 pointer-events-none"></div>
+
+            <div className="relative z-10">
+              {!isInlineSubmitted ? (
+                <div>
+                  <div className="text-center max-w-2xl mx-auto mb-10">
+                    <span className="text-xs font-extrabold uppercase tracking-widest text-green-700 block mb-3">
+                      {language === 'en' ? 'Free Tax Resource' : 'Recurso de Impuestos Gratis'}
+                    </span>
+                    <h2 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+                      {t.home.checklistTitle}
+                    </h2>
+                    <p className="text-slate-600 font-medium">
+                      {t.home.checklistSub}
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleInlineSubmit} className="max-w-xl mx-auto space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700 ml-1">
+                          {t.home.modal.firstName}
+                        </label>
+                        <div className="relative">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                            <User className="w-5 h-5" />
+                          </div>
+                          <input
+                            required
+                            type="text"
+                            value={inlineFormData.firstName}
+                            onChange={(e) => setInlineFormData({ ...inlineFormData, firstName: e.target.value })}
+                            className="w-full bg-slate-50 border border-slate-200/85 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all font-medium text-slate-900"
+                            placeholder="Jane"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700 ml-1">
+                          {t.home.modal.email}
+                        </label>
+                        <div className="relative">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                            <Mail className="w-5 h-5" />
+                          </div>
+                          <input
+                            required
+                            type="email"
+                            value={inlineFormData.email}
+                            onChange={(e) => setInlineFormData({ ...inlineFormData, email: e.target.value })}
+                            className="w-full bg-slate-50 border border-slate-200/85 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all font-medium text-slate-900"
+                            placeholder="jane@example.com"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      disabled={isInlineLoading}
+                      type="submit"
+                      className="w-full bg-green-700 hover:bg-green-800 text-white py-4 px-8 rounded-xl font-bold flex items-center justify-center gap-3 transition-all shadow-xl shadow-green-700/10 disabled:opacity-50 mt-6 active:scale-95 text-lg"
+                    >
+                      {isInlineLoading ? (
+                        <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ) : (
+                        <>
+                          <FileDown className="w-5 h-5" />
+                          {t.home.modal.submit}
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </div>
+              ) : (
+                <div className="text-center py-8">
+                  <div className="w-20 h-20 bg-green-100 text-green-700 rounded-full flex items-center justify-center mb-8 mx-auto">
+                    <CheckCircle2 className="w-10 h-10" />
+                  </div>
+                  <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                    {t.home.modal.successTitle}
+                  </h2>
+                  <p className="text-slate-600 mb-10 font-medium text-lg max-w-md mx-auto">
+                    {t.home.modal.successSub}
+                  </p>
+                  <button
+                    onClick={handleInlineDownload}
+                    className="inline-flex items-center gap-3 bg-green-700 text-white px-10 py-5 rounded-2xl font-bold hover:bg-green-800 transition-all shadow-xl shadow-green-700/10 active:scale-95 text-lg"
+                  >
+                    <Download className="w-6 h-6" />
+                    {t.home.modal.downloadLink}
+                  </button>
+                </div>
+              )}
             </div>
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="relative z-10 bg-white text-green-900 px-10 py-5 rounded-2xl font-bold text-xl hover:scale-105 transition-transform flex items-center space-x-3 shadow-2xl"
-            >
-              <FileDown className="w-6 h-6" />
-              <span>{t.home.checklistBtn}</span>
-            </button>
-            {/* Abstract Shapes */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-green-700 rounded-full blur-[80px] opacity-20 -mr-20 -mt-20"></div>
-            <div className="absolute bottom-1/2 left-0 w-32 h-32 bg-yellow-400 rounded-full blur-[60px] opacity-10"></div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       <ChecklistModal 

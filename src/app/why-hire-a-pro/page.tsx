@@ -50,7 +50,7 @@ export default function WhyHirePro() {
           <div className="relative w-full aspect-video">
             <img 
               src="https://i.ibb.co/ZRnXpdzD/PS1-0741.jpg" 
-              alt="Professional consultation" 
+              alt="Professional tax preparation and bookkeeping services consultation in Union Gap and Yakima" 
               className="w-full h-full rounded-[3rem] shadow-2xl border border-slate-100 object-cover"
               width="1600"
               height="900"
@@ -96,7 +96,7 @@ export default function WhyHirePro() {
               >
                 <img 
                   src="https://i.ibb.co/wFKjnnvb/PS1-0832.jpg" 
-                  alt="Professional financial guidance" 
+                  alt="Professional tax preparation and bookkeeping services guidance in Union Gap and Yakima" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   width="800"
                   height="1000"
@@ -118,7 +118,7 @@ export default function WhyHirePro() {
               >
                 <img 
                   src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
-                  alt="Personalized consultation session" 
+                  alt="Personalized tax preparation and bookkeeping services consultation in Union Gap and Yakima" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   width="800"
                   height="1000"

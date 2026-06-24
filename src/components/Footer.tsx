@@ -26,37 +26,38 @@ export default function Footer() {
               {t.home.footerDesc}
             </p>
             <div className="space-y-3 mb-8">
-              <a href="tel:+15099020922" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
-                <Phone className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
-                <span className="font-bold underline decoration-green-900/50 underline-offset-4">(509) 902-0922</span>
+              <a href="tel:+15099020922" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group py-2">
+                <Phone className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform shrink-0" />
+                <span className="font-bold underline decoration-green-900/50 underline-offset-4 text-base md:text-lg">(509) 902-0922</span>
               </a>
               <a 
                 href="https://www.google.com/maps/dir/?api=1&destination=Lili's+Tax+Services,+LLC&destination_place_id=ChIJlzFE3oN9l1QRwEW7LX-sylI" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
+                className="flex items-start gap-3 text-slate-400 hover:text-white transition-colors group py-2"
                 id="footer-address-link"
               >
-                <MapPin className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
-                <span className="font-medium hover:underline">{"Lili's Tax Services, LLC, 2642 Main St Suite K, Union Gap, WA 98903"}</span>
+                <MapPin className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform mt-0.5 shrink-0" />
+                <span className="font-medium hover:underline text-sm md:text-base leading-relaxed">{"Lili's Tax Services, LLC, 2642 Main St Suite K, Union Gap, WA 98903"}</span>
               </a>
-              <a href="mailto:Lilistaxservices@gmail.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
-                <Mail className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
-                <span className="font-medium">Lilistaxservices@gmail.com</span>
+              <a href="mailto:Lilistaxservices@gmail.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group py-2">
+                <Mail className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform shrink-0" />
+                <span className="font-medium text-sm md:text-base">Lilistaxservices@gmail.com</span>
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <a href="https://www.facebook.com/LiliTaxServices/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all">
-                <Facebook className="w-5 h-5" />
+              <a href="https://www.facebook.com/LiliTaxServices/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all shrink-0" aria-label="Facebook">
+                <Facebook className="w-6 h-6" />
               </a>
               <a 
                 href="https://wa.me/15098239880" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all"
+                className="w-12 h-12 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-white transition-all shrink-0"
                 id="footer-whatsapp-link"
+                aria-label="WhatsApp"
               >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12.012 2c-5.506 0-9.988 4.482-9.988 9.988 0 1.761.458 3.479 1.332 5l-1.42 5.187 5.309-1.393c1.472.803 3.125 1.226 4.767 1.226h.005c5.503 0 9.985-4.482 9.985-9.988C22 6.482 17.518 2 12.012 2zm6.05 14.159c-.248.697-1.238 1.272-1.744 1.356-.464.077-.1.22-3.003-1a13.376 13.376 0 0 1-5.186-4.572c-1.47-2.01-1.96-3.856-1.365-5.068.223-.453.69-.74 1.15-.74.155 0 .296.002.418.008.283.013.431.026.621.433.243.518.832 2.03.904 2.179.073.149.122.323.023.52-.099.198-.148.322-.296.496-.149.174-.313.388-.446.52-.149.149-.304.31-.131.607.174.296.772 1.272 1.657 2.059.885.787 1.637 1.031 1.934 1.18.296.149.469.124.643-.075.174-.198.743-.865.942-1.162.198-.297.396-.248.669-.149.272.099 1.733.817 2.03.965.297.149.495.223.569.347.074.124.074.721-.174 1.417z"/>
                 </svg>
               </a>
