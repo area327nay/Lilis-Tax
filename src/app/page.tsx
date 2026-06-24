@@ -2,7 +2,28 @@
 
 import React from 'react';
 import { useLanguage } from '../LanguageContext';
-import { ChevronRight, ShieldCheck, BrainCircuit, ReceiptText, Users, Map, FileDown, Phone, CheckCircle2, MapPin, Building2 } from 'lucide-react';
+import { 
+  ChevronRight, 
+  ShieldCheck, 
+  ReceiptText, 
+  Users, 
+  Map, 
+  FileDown, 
+  Phone, 
+  CheckCircle2, 
+  MapPin, 
+  Building2, 
+  HeartHandshake, 
+  Scale, 
+  Lightbulb,
+  BookOpenText,
+  Calculator,
+  Monitor,
+  User,
+  CalendarDays,
+  LineChart,
+  Briefcase
+} from 'lucide-react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import ChecklistModal from '../components/ChecklistModal';
@@ -107,6 +128,101 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Core Values Section */}
+      <section id="core-values-section" className="py-24 bg-slate-100/50 border-b border-slate-200/60 relative overflow-hidden">
+        <div id="core-values-container" className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.h2 
+              id="core-values-heading"
+              className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              {language === 'en' 
+                ? 'Financial Guidance Rooted in Community Care' 
+                : 'Guía Financiera Arraigada en el Cuidado de la Comunidad'}
+            </motion.h2>
+            <motion.div 
+              className="w-24 h-1 bg-green-600 mx-auto mt-6 rounded-full"
+              initial={{ opacity: 0, width: 0 }}
+              whileInView={{ opacity: 1, width: 96 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            ></motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Column 1: Caring & Empathy */}
+            <motion.div 
+              id="core-value-card-empathy"
+              className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/30 border border-slate-100 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-700 mb-6 group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-sm">
+                <HeartHandshake className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                {language === 'en' ? 'A Judgment-Free Environment' : 'Un Ambiente Libre de Juicios'}
+              </h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                {language === 'en' 
+                  ? 'We know taxes can be overwhelming. We treat every client like family, offering patient, bilingual support and genuine care for your financial well-being.' 
+                  : 'Sabemos que los impuestos pueden ser abrumadores. Tratamos a cada cliente como familia, ofreciendo apoyo paciente, bilingüe y un cuidado genuino para su bienestar financiero.'}
+              </p>
+            </motion.div>
+
+            {/* Column 2: Affordability */}
+            <motion.div 
+              id="core-value-card-affordability"
+              className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/30 border border-slate-100 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-700 mb-6 group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-sm">
+                <Scale className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                {language === 'en' ? 'Transparent, Accessible Pricing' : 'Precios Transparentes y Accesibles'}
+              </h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                {language === 'en' 
+                  ? "Expert financial protection shouldn't be out of reach. We provide premium, licensed tax and bookkeeping services at fair, honest rates with absolutely no hidden fees." 
+                  : 'La protección financiera experta no debería estar fuera de su alcance. Brindamos servicios premium de impuestos y contabilidad con licencia a tarifas justas y honestas, sin cargos ocultos.'}
+              </p>
+            </motion.div>
+
+            {/* Column 3: Trust & Education */}
+            <motion.div 
+              id="core-value-card-education"
+              className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/30 border border-slate-100 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-start group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <div className="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-700 mb-6 group-hover:bg-green-700 group-hover:text-white transition-all duration-300 shadow-sm">
+                <Lightbulb className="w-7 h-7" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                {language === 'en' ? 'Empowering You for the Future' : 'Empoderándolo para el Futuro'}
+              </h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                {language === 'en' 
+                  ? 'We do more than just file paperwork. Our goal is to educate our clients, helping you understand your finances so you can make confident, informed decisions year after year.' 
+                  : 'Hacemos más que solo presentar documentos. Nuestro objetivo es educar a nuestros clientes, ayudándole a comprender sus finanzas para que pueda tomar decisiones seguras e informadas año tras año.'}
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us - Video Section */}
       <section className="py-24 bg-slate-900 border-y border-slate-800 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-green-500/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
@@ -151,15 +267,13 @@ export default function Home() {
               id="why-choose-us-video"
             >
               <div className="relative group aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-slate-800">
-                <video 
-                  className="w-full h-full object-cover"
-                  src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/why-choose-us.mp4"
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  controls
-                ></video>
+                <iframe
+                  className="w-full h-full aspect-video rounded-[2.5rem]"
+                  src="https://www.youtube.com/embed/bjfTtCXNoqE"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </div>
             </motion.div>
           </div>
@@ -167,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Services Grid Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-slate-50/40 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
@@ -177,7 +291,10 @@ export default function Home() {
             className="text-center mb-16"
             id="services-section-header"
           >
-            <h2 className="text-4xl font-extrabold text-slate-900">{t.services.title}</h2>
+            <span className="text-xs font-bold uppercase tracking-widest text-green-700 block mb-3">
+              {t.services.coreServicesHeader}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">{t.services.title}</h2>
           </motion.div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -187,9 +304,19 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.1 }}
               id="mini-service-card-tax"
+              className="h-full"
             >
               <MiniServiceCard 
-                icon={<ReceiptText className="text-green-700" />}
+                icon={
+                  <div className="relative w-16 h-16 flex items-center justify-center scale-90">
+                    <div className="absolute top-1 left-1 text-slate-300">
+                      <ReceiptText strokeWidth={1.2} className="w-12 h-12" />
+                    </div>
+                    <div className="absolute bottom-1 right-1 bg-white p-1 rounded-lg shadow-md border border-slate-200 text-green-700">
+                      <ShieldCheck strokeWidth={1.5} className="w-6 h-6" />
+                    </div>
+                  </div>
+                }
                 title={t.services.taxPrep}
                 description={t.services.taxPrepDesc}
                 ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
@@ -202,9 +329,19 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.2 }}
               id="mini-service-card-bizformation"
+              className="h-full"
             >
               <MiniServiceCard 
-                icon={<Building2 className="text-green-700" />}
+                icon={
+                  <div className="relative w-16 h-16 flex items-center justify-center scale-90">
+                    <div className="absolute top-1 left-1 text-slate-300">
+                      <Building2 strokeWidth={1.2} className="w-12 h-12" />
+                    </div>
+                    <div className="absolute bottom-1 right-1 bg-white p-1 rounded-lg shadow-md border border-slate-200 text-green-700">
+                      <Briefcase strokeWidth={1.5} className="w-6 h-6" />
+                    </div>
+                  </div>
+                }
                 title={t.services.bizFormation}
                 description={t.services.bizFormationDesc}
                 ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
@@ -217,9 +354,19 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.3 }}
               id="mini-service-card-bookkeeping"
+              className="h-full"
             >
               <MiniServiceCard 
-                icon={<BrainCircuit className="text-green-700" />}
+                icon={
+                  <div className="relative w-16 h-16 flex items-center justify-center scale-90">
+                    <div className="absolute top-1 left-1 text-slate-300">
+                      <BookOpenText strokeWidth={1.2} className="w-12 h-12" />
+                    </div>
+                    <div className="absolute bottom-1 right-1 bg-white p-1 rounded-lg shadow-md border border-slate-200 text-green-700">
+                      <Calculator strokeWidth={1.5} className="w-6 h-6" />
+                    </div>
+                  </div>
+                }
                 title={t.services.bookkeeping}
                 description={t.services.bookkeepingDesc}
                 ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
@@ -232,9 +379,23 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: 0.4 }}
               id="mini-service-card-payroll"
+              className="h-full"
             >
               <MiniServiceCard 
-                 icon={<Users className="text-green-700" />}
+                icon={
+                  <div className="relative w-16 h-16 flex items-center justify-center scale-90">
+                    <div className="absolute top-1 left-1 text-slate-300">
+                      <Monitor strokeWidth={1.2} className="w-12 h-12" />
+                    </div>
+                    <div className="absolute top-3 left-4 text-green-600/80">
+                      <LineChart strokeWidth={2} className="w-4 h-4" />
+                    </div>
+                    <div className="absolute bottom-0 right-0 bg-white p-1 rounded-lg shadow-md border border-slate-200 text-green-700 flex items-center gap-0.5">
+                      <User strokeWidth={1.5} className="w-4 h-4" />
+                      <CalendarDays strokeWidth={1.5} className="w-4 h-4" />
+                    </div>
+                  </div>
+                }
                 title={t.services.payroll}
                 description={t.services.payrollDesc}
                 ctaText={language === 'en' ? 'Learn More' : 'Saber Más'}
@@ -410,21 +571,24 @@ export default function Home() {
   );
 }
 
-function MiniServiceCard({ icon, title, description, ctaText }: { icon: React.ReactElement, title: string, description: string, ctaText: string }) {
+function MiniServiceCard({ icon, title, description, ctaText }: { icon: React.ReactNode, title: string, description: string, ctaText: string }) {
   return (
-    <div className="flex-1 bg-slate-50 border border-slate-100 p-8 rounded-2xl transition-all hover:shadow-xl hover:shadow-slate-200/50 hover:bg-white group">
-      <div className="w-12 h-12 bg-white shadow-sm border border-slate-200 flex items-center justify-center rounded-xl mb-6 group-hover:border-green-700/30 transition-colors">
-        {React.cloneElement(icon, { 
-          className: 'w-6 h-6' 
-        } as React.HTMLAttributes<SVGElement>)}
+    <div className="flex flex-col justify-between h-full bg-slate-50/60 border border-slate-100 p-8 rounded-[2rem] transition-all duration-300 hover:shadow-2xl hover:shadow-slate-200/40 hover:-translate-y-1 hover:bg-white group">
+      <div>
+        <div className="w-16 h-16 bg-white shadow-sm border border-slate-200 flex items-center justify-center rounded-2xl mb-6 group-hover:border-green-700/30 transition-all duration-300">
+          {icon}
+        </div>
+        <h4 className="text-2xl font-bold mb-4 text-slate-900 tracking-tight">{title}</h4>
+        <p className="text-sm text-slate-500 leading-relaxed font-medium">
+          {description}
+        </p>
       </div>
-      <h4 className="text-xl font-bold mb-2 text-slate-900 tracking-tight">{title}</h4>
-      <p className="text-sm text-slate-500 leading-relaxed font-medium">
-        {description}
-      </p>
-      <Link href="/services" className="mt-6 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-green-700 hover:gap-2 transition-all">
-        {ctaText} <ChevronRight className="w-3 h-3" />
-      </Link>
+      <div className="mt-8">
+        <Link href="/services" className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-green-700 hover:gap-2.5 transition-all">
+          <span>{ctaText}</span>
+          <ChevronRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
     </div>
   );
 }

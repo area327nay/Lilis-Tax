@@ -39,6 +39,7 @@ export interface Translation {
   };
   services: {
     title: string;
+    coreServicesHeader: string;
     taxPrep: string;
     taxPrepDesc: string;
     taxPrepDetails: string[];
@@ -226,8 +227,9 @@ export const translations: Record<Language, Translation> = {
     },
     services: {
       title: 'Our Services',
+      coreServicesHeader: 'Our Core Services',
       taxPrep: 'Tax Preparation',
-      taxPrepDesc: 'Individual and small business tax returns with a focus on maximized deductions.',
+      taxPrepDesc: 'We prepare accurate individual and business tax returns to maximize your deductions. Our proactive planning protects your hard-earned income and ensures total IRS compliance.',
       taxPrepDetails: [
         'Personal Income Tax (1040)',
         'Business Tax (Schedule C, 1120, 1065)',
@@ -236,7 +238,7 @@ export const translations: Record<Language, Translation> = {
         'Year-round Proactive Planning'
       ],
       bizFormation: 'Business Formation & LLC Setup',
-      bizFormationDesc: 'Step-by-step guidance for new business applications, LLC registration, and state licensing.',
+      bizFormationDesc: 'Launch your venture with confidence. We handle LLC registration, EIN acquisition, and licensing paperwork so you can focus entirely on growing your new enterprise.',
       bizFormationDetails: [
         'LLC & Corporation Registration',
         'EIN & Tax ID Obtainment',
@@ -245,7 +247,7 @@ export const translations: Record<Language, Translation> = {
         'New Business Compliance Consulting'
       ],
       bookkeeping: 'Bookkeeping',
-      bookkeepingDesc: 'Keeping your financial records accurate and up-to-date throughout the year.',
+      bookkeepingDesc: 'Maintain flawless, organized financial records with our professional tracking. We manage reconciliations and reports to keep your business prepared and audit-ready.',
       bookkeepingDetails: [
         'Monthly Financial Statements',
         'Accounts Payable & Receivable',
@@ -254,7 +256,7 @@ export const translations: Record<Language, Translation> = {
         'Simplified Expense Tracking'
       ],
       payroll: 'Payroll Solutions',
-      payrollDesc: 'Reliable payroll processing to keep your business compliant.',
+      payrollDesc: 'Streamline your employee payroll with accurate check processing and tax filing. We handle direct deposits and W-2 forms so you remain compliant with state regulations.',
       payrollDetails: [
         'Full-Service Payroll Processing',
         'Quarterly Tax Filing (940/941)',
@@ -322,7 +324,7 @@ export const translations: Record<Language, Translation> = {
         bookingBtn: 'Online Booking Tool'
       },
       hours: 'Mon-Fri: 10am - 7pm | Sat: 10am - 5pm | Sun: Closed',
-      location: '2642 Main St Suite K, Union Gap, WA 98903',
+      location: 'Lili\'s Tax Services, LLC, 2642 Main St Suite K, Union Gap, WA 98903',
       coverageTitle: 'Regional Coverage',
       coverageSub: 'Union Gap Office & Central WA Mobile Services',
       callUs: 'Call Us',
@@ -479,8 +481,9 @@ export const translations: Record<Language, Translation> = {
     },
     services: {
       title: 'Nuestros Servicios',
+      coreServicesHeader: 'Nuestros Servicios Principales',
       taxPrep: 'Preparación de Impuestos',
-      taxPrepDesc: 'Declaraciones individuales y de pequeñas empresas con enfoque en deducciones máximas.',
+      taxPrepDesc: 'Preparamos declaraciones de impuestos individuales y comerciales para maximizar sus deducciones. Nuestra planificación proactiva protege sus ingresos y garantiza el cumplimiento.',
       taxPrepDetails: [
         'Impuesto sobre la renta personal (1040)',
         'Impuesto comercial (Anexo C, 1120, 1065)',
@@ -489,7 +492,7 @@ export const translations: Record<Language, Translation> = {
         'Planificación proactiva durante todo el año'
       ],
       bizFormation: 'Formación de Empresas y Creación de LLC',
-      bizFormationDesc: 'Asesoría paso a paso para solicitudes de nuevos negocios, registro de LLC y licencias estatales.',
+      bizFormationDesc: 'Inicie su negocio con total confianza. Gestionamos el registro de LLC, EIN y licencias comerciales para que pueda concentrarse por completo en el crecimiento de su empresa.',
       bizFormationDetails: [
         'Registro de LLC y Corporaciones',
         'Obtención de EIN y Número de Impuestos',
@@ -498,7 +501,7 @@ export const translations: Record<Language, Translation> = {
         'Consultoría de Cumplimiento para Nuevos Negocios'
       ],
       bookkeeping: 'Contabilidad',
-      bookkeepingDesc: 'Mantener sus registros financieros precisos y actualizados durante todo el año.',
+      bookkeepingDesc: 'Mantenga registros financieros impecables y organizados con nuestro seguimiento. Gestionamos conciliaciones e informes para que su negocio esté preparado para auditorías.',
       bookkeepingDetails: [
         'Estados financieros mensuales',
         'Cuentas por pagar y por cobrar',
@@ -507,7 +510,7 @@ export const translations: Record<Language, Translation> = {
         'Seguimiento de gastos simplificado'
       ],
       payroll: 'Soluciones de Nómina',
-      payrollDesc: 'Procesamiento de nómina confiable para mantener su negocio en cumplimiento.',
+      payrollDesc: 'Optimice la nómina de sus empleados con procesamiento de cheques y declaración de impuestos. Gestionamos depósitos directos y formularios W-2 bajo todas las normas estatales.',
       payrollDetails: [
         'Procesamiento de nómina de servicio completo',
         'Presentación de impuestos trimestrales (940/941)',
@@ -575,7 +578,7 @@ export const translations: Record<Language, Translation> = {
         bookingBtn: 'Herramienta de Reserva en Línea'
       },
       hours: 'Lun-Vie: 10am - 7pm | Sab: 10am - 5pm | Dom: Cerrado',
-      location: '2642 Main St Suite K, Union Gap, WA 98903',
+      location: 'Lili\'s Tax Services, LLC, 2642 Main St Suite K, Union Gap, WA 98903',
       coverageTitle: 'Cobertura Regional',
       coverageSub: 'Oficina en Union Gap y Servicios Móviles en Central WA',
       callUs: 'Llámenos',

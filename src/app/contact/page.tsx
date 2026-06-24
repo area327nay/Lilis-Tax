@@ -103,6 +103,8 @@ export default function Contact() {
                 icon={<MapPin />}
                 title={t.contact.serviceArea}
                 content={t.contact.location}
+                link="https://www.google.com/maps/dir/?api=1&destination=Lili's+Tax+Services,+LLC&destination_place_id=ChIJlzFE3oN9l1QRwEW7LX-sylI"
+                external
               />
             </div>
           </div>

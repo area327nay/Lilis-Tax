@@ -7,7 +7,7 @@ import { CheckCircle2, TrendingUp, ShieldAlert, Timer, Lightbulb, Scale, Sparkle
 import Link from 'next/link';
 
 export default function WhyHirePro() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const icons = [
     <TrendingUp />, <ShieldAlert />, <Timer />, <Lightbulb />, <Scale />, 
@@ -30,7 +30,7 @@ export default function WhyHirePro() {
               {t.whyPro.title.split('Future')[0]} <span className="text-green-700 italic underline decoration-yellow-400 decoration-4 underline-offset-8">Future</span>
             </h1>
             <p className="text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10 font-medium">
-              {t.whyPro.subtitle}
+               {t.whyPro.subtitle}
             </p>
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white border border-slate-200 text-slate-700 rounded-full font-bold text-xs shadow-sm">
                <CheckCircle2 className="w-4 h-4 text-green-700" />
@@ -60,6 +60,81 @@ export default function WhyHirePro() {
         </motion.div>
       </section>
 
+      {/* Feature Block: Dedicated Local Expertise */}
+      <section className="max-w-7xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Side: Short introductory header & text */}
+          <div className="lg:col-span-5 space-y-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-green-700 block bg-green-50 px-3 py-1.5 rounded-lg w-fit border border-green-100">
+              {language === 'en' ? 'Community Trust' : 'Confianza Comunitaria'}
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              {language === 'en' ? 'Dedicated Local Expertise' : 'Experiencia Local Dedicada'}
+            </h2>
+            <div className="w-16 h-1 bg-green-600 rounded-full my-4"></div>
+            <p className="text-slate-600 text-lg leading-relaxed font-medium">
+              {language === 'en' 
+                ? 'We bring professional, licensed financial guidance right to your doorstep. Our deeply personalized services ensure that every detail of your taxes, bookkeeping, and payroll is managed with precision, care, and a thorough understanding of Washington state and federal regulations.' 
+                : 'Brindamos orientación financiera profesional y con licencia directamente en su comunidad. Nuestros servicios profundamente personalizados garantizan que cada detalle de sus impuestos, contabilidad y nómina se gestione con precisión, cuidado y un conocimiento profundo de las regulaciones estatales y federales.'}
+            </p>
+            <p className="text-slate-500 text-base leading-relaxed">
+              {language === 'en'
+                ? 'Whether you are a local family in Yakima or a small agricultural enterprise in Central Washington, we stand by you year-round with reliable and friendly support.'
+                : 'Ya sea una familia local en Yakima o una pequeña empresa agrícola en el centro de Washington, lo respaldamos durante todo el año con un apoyo confiable y amable.'}
+            </p>
+          </div>
+
+          {/* Right Side: Extracted photos of the professional working with clients */}
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <motion.div 
+                className="relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-lg border border-slate-100 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <img 
+                  src="https://i.ibb.co/wFKjnnvb/PS1-0832.jpg" 
+                  alt="Professional financial guidance" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white font-bold text-sm">
+                    {language === 'en' ? 'Expert Auditing Support' : 'Soporte de Auditoría Experto'}
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="relative aspect-[4/5] sm:aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-lg border border-slate-100 sm:mt-8 group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <img 
+                  src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" 
+                  alt="Personalized consultation session" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <span className="text-white font-bold text-sm">
+                    {language === 'en' ? 'Peace of Mind Consultation' : 'Consulta de Paz Mental'}
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Grid */}
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -69,10 +144,10 @@ export default function WhyHirePro() {
                initial={{ opacity: 0, y: 20 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col gap-6 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 group"
+               className="h-full flex flex-col justify-between p-10 bg-slate-50/70 rounded-[2.5rem] border border-slate-100 hover:bg-white hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500 group"
              >
                <div className="flex gap-8 items-start">
-                 <div className="p-4 bg-white shadow-sm border border-slate-200 text-green-700 rounded-2xl shrink-0 group-hover:bg-green-700 group-hover:text-white transition-colors">
+                 <div className="p-4 bg-white shadow-sm border border-slate-200 text-green-700 rounded-2xl shrink-0 group-hover:bg-green-700 group-hover:text-white transition-colors duration-300">
                    {React.cloneElement(icons[index] as React.ReactElement, { 
                      className: 'w-6 h-6' 
                    } as React.HTMLAttributes<SVGElement>)}
@@ -82,25 +157,6 @@ export default function WhyHirePro() {
                    <p className="text-slate-600 leading-relaxed font-medium">{benefit.desc}</p>
                  </div>
                </div>
-               
-                {index === 1 && ( // Audit Protection
-                 <div className="relative w-full aspect-video mt-4">
-                   <img 
-                     src="https://i.ibb.co/wFKjnnvb/PS1-0832.jpg" width="800" height="450" loading="lazy" 
-                     alt="Audit support" 
-                     className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
-                   />
-                 </div>
-               )}
-               {index === 7 && ( // Peace of Mind
-                 <div className="relative w-full aspect-video mt-4">
-                   <img 
-                     src="https://i.ibb.co/jZ6xL8gG/PS1-0727.jpg" width="800" height="450" loading="lazy" 
-                     alt="Peace of mind" 
-                     className="w-full h-full rounded-2xl shadow-lg border border-slate-100 object-cover" 
-                   />
-                 </div>
-               )}
              </motion.div>
            ))}
         </div>

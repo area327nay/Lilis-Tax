@@ -31,14 +31,14 @@ export default function Footer() {
                 <span className="font-bold underline decoration-green-900/50 underline-offset-4">(509) 902-0922</span>
               </a>
               <a 
-                href="https://www.google.com/maps/dir/?api=1&destination=2642+Main+St+Suite+K,+Union+Gap,+WA+98903" 
+                href="https://www.google.com/maps/dir/?api=1&destination=Lili's+Tax+Services,+LLC&destination_place_id=ChIJlzFE3oN9l1QRwEW7LX-sylI" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group"
                 id="footer-address-link"
               >
                 <MapPin className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
-                <span className="font-medium hover:underline">2642 Main St Suite K, Union Gap, WA 98903</span>
+                <span className="font-medium hover:underline">{"Lili's Tax Services, LLC, 2642 Main St Suite K, Union Gap, WA 98903"}</span>
               </a>
               <a href="mailto:Lilistaxservices@gmail.com" className="flex items-center gap-3 text-slate-400 hover:text-white transition-colors group">
                 <Mail className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />

@@ -63,15 +63,13 @@ export default function About() {
               {/* Story Video */}
               <div className="mt-12 group">
                 <div className="relative aspect-video rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-100">
-                  <video 
-                    className="w-full h-full object-cover"
-                    src="https://raw.githubusercontent.com/area327nay/Lilis-Tax/main/our-story.mp4"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    controls
-                  ></video>
+                  <iframe
+                    className="w-full h-full aspect-video rounded-3xl"
+                    src="https://www.youtube.com/embed/9dce-sjlJWw"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
