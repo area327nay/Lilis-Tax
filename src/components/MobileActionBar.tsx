@@ -23,10 +23,9 @@ export default function MobileActionBar() {
         initial={{ y: 100 }}
         animate={{ y: 0 }}
         transition={{ delay: 0.1 }}
-        href="https://wa.me/15099020922"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="sms:+15098239880"
         className="bg-green-600 text-white p-4 rounded-2xl shadow-2xl flex items-center justify-center border border-green-500 transition-transform active:scale-95"
+        aria-label="Send SMS text message"
       >
         <MessageCircle className="w-6 h-6" />
       </motion.a>
